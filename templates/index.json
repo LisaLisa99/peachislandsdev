@@ -465,7 +465,7 @@
             "heading": "Wild Bloom",
             "text": "<p>A Beautiful botanical bird letter writing set, inspired to make every handwritten note a treasured.</p>",
             "link": "shopify://collections",
-            "button_label": "Optional Link Label here",
+            "button_label": "",
             "image_width": 100,
             "alignment": "center",
             "price": "14.99",
@@ -558,7 +558,7 @@
         "mobile_image_height": 280,
         "row_gap": 32,
         "alignment": "center",
-        "show_prices": false
+        "show_prices": true
       }
     }
   },
