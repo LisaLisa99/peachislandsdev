@@ -548,15 +548,16 @@
         "card_BaGfx9": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/letterhead1Place5.webp",
             "original_image": "image_25",
-            "alt": "Peach Islands artwork",
-            "heading": "Column 4",
-            "text": "<p>Share a little inspiration from Peach Islands.</p>",
+            "alt": "Warm Autumn",
+            "heading": "Warm Autumn",
+            "text": "<p>Warm Autumn letter writing set, inspired to make treasured notes.</p>",
             "link": "",
             "button_label": "",
             "image_width": 100,
             "alignment": "inherit",
-            "price": "",
+            "price": "14.99",
             "price_product": ""
           }
         },
