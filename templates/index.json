@@ -516,15 +516,16 @@
         "card_PaaMze": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/letterhead1Place6.webp",
             "original_image": "image_33",
-            "alt": "Peach Islands artwork",
-            "heading": "Column 2",
-            "text": "<p>Share a little inspiration from Peach Islands.</p>",
+            "alt": "Wild Days",
+            "heading": "Wild Days",
+            "text": "<p>Wild Days letter writing set, inspired to make treasured notes.</p>",
             "link": "",
             "button_label": "",
             "image_width": 100,
             "alignment": "inherit",
-            "price": "",
+            "price": "$14.99",
             "price_product": ""
           }
         },
