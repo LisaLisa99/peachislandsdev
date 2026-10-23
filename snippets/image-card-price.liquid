@@ -1,0 +1,7 @@
+{% if show_prices %}
+  {% if block.settings.price_product != blank %}
+    <p class="image-card-price" style="font-size: var(--card-text-size, 16px); margin: 12px 0 0">{% if block.settings.price_product.price_varies %}{{ 'product.from' | t }} {% endif %}{{ block.settings.price_product.price | money }}</p>
+  {% elsif block.settings.price != blank %}
+    <p class="image-card-price" style="font-size: var(--card-text-size, 16px); margin: 12px 0 0">{{ block.settings.price | escape }}</p>
+  {% endif %}
+{% endif %}

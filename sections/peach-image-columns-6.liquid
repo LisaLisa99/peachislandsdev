@@ -9,6 +9,7 @@
           {% if block.settings.link != blank %}</a>{% endif %}
           {% if block.settings.heading != blank %}<h2>{% if block.settings.link != blank %}<a href="{{ block.settings.link }}">{% endif %}{{ block.settings.heading | escape }}{% if block.settings.link != blank %}</a>{% endif %}</h2>{% endif %}
           <div class="rte">{{ block.settings.text }}</div>
+{% render 'image-card-price', block: block, show_prices: section.settings.show_prices %}
           {% if block.settings.link != blank and block.settings.button_label != blank %}<a class="text-link" href="{{ block.settings.link }}">{{ block.settings.button_label | escape }}</a>{% endif %}
         </article>
       {% endfor %}
@@ -206,6 +207,12 @@
         }
       ],
       "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_prices",
+      "label": "Show prices",
+      "default": false
     }
   ],
   "class": "pi-section",
@@ -320,6 +327,18 @@
             }
           ],
           "default": "inherit"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Optional price text",
+          "info": "Shown only when prices are enabled. Leave blank to show no price. Select a product below for automatic pricing instead."
+        },
+        {
+          "type": "product",
+          "id": "price_product",
+          "label": "Product for automatic price",
+          "info": "When selected, its current Shopify price is used instead of the optional price text."
         }
       ]
     }

@@ -71,5 +71,11 @@
     "code": "Use this code at checkout",
     "expires": "Expires",
     "wallet": "Add to Apple Wallet"
+  },
+  "showcase": {
+    "sale": "Sale",
+    "rating": "Rated {{ rating }} out of {{ scale }} from {{ count }} reviews",
+    "choose_product": "Choose a Shopify product for this block.",
+    "choose_collection": "Choose a collection with products."
   }
 }

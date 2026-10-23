@@ -1,0 +1,16 @@
+{% if product != blank %}
+<article class="showcase-product"{% if block %} {{ block.shopify_attributes }}{% endif %}>
+  {% assign card_image = image | default: product.featured_image %}
+  <a class="showcase-image" href="{{ product.url }}" aria-label="{{ product.title | escape }}">
+    {% if card_image %}{% assign image_alt = card_image.alt | default: product.title %}{{ card_image | image_url: width: 1400 | image_tag: widths: '240, 360, 540, 750, 1000, 1400', sizes: '(max-width: 575px) 90vw, (max-width: 991px) 45vw, 33vw', loading: 'lazy', alt: image_alt }}{% else %}{{ 'product-1' | placeholder_svg_tag: 'pi-placeholder' }}{% endif %}
+    {% if settings.show_badges %}<div class="showcase-badges">{% unless product.available %}<span>{{ 'product.sold_out' | t }}</span>{% else %}{% if product.compare_at_price_min > product.price and product.price_varies == false %}<span>{{ 'showcase.sale' | t }}</span>{% endif %}{% endunless %}</div>{% endif %}
+  </a>
+  {% if settings.show_names %}<h3><a href="{{ product.url }}">{{ product.title | escape }}</a></h3>{% endif %}
+  {% if settings.show_prices %}<p class="showcase-price">{% if product.price_varies %}{{ 'product.from' | t }} {% endif %}{{ product.price | money }}{% if product.compare_at_price_min > product.price and product.price_varies == false %} <s>{{ product.compare_at_price_min | money }}</s>{% endif %}</p>{% endif %}
+  {% if settings.show_ratings %}
+    {% assign review = product.metafields.reviews.rating.value %}
+    {% assign review_count = product.metafields.reviews.rating_count.value | default: 0 | plus: 0 %}
+    {% if review != blank and review_count > 0 and review.rating > 0 and review.scale_max > 0 and review.rating <= review.scale_max %}<p class="showcase-rating" aria-label="{{ 'showcase.rating' | t: rating: review.rating, scale: review.scale_max, count: review_count }}">{{ review.rating }} / {{ review.scale_max }} <span>({{ review_count }})</span></p>{% endif %}
+  {% endif %}
+</article>
+{% elsif request.design_mode %}<div class="showcase-setup"{% if block %} {{ block.shopify_attributes }}{% endif %}>{{ 'showcase.choose_product' | t }}</div>{% endif %}
