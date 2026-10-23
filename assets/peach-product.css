@@ -1,0 +1,137 @@
+/* Product-only overrides preserve the original two-column Peach Islands design. */
+.peach-product-shell .product-breadcrumbs {
+  padding-top: 28px;
+  font-family: var(--body-font, sans-serif);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.peach-product-shell .product-breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.peach-product-shell .product-breadcrumbs li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.peach-product-shell .product-breadcrumbs a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.peach-product-shell .product-detail {
+  grid-template-columns: var(--product-image-column, 52%) minmax(0, 1fr);
+  min-height: 0;
+  gap: var(--product-gap, 40px);
+}
+.peach-product-shell .product-breadcrumbs + .product-detail {
+  padding-top: 24px;
+}
+.peach-product-shell .product-gallery {
+  display: grid;
+  grid-template-columns: var(
+      --active-thumbnail-size,
+      var(--product-thumbnail-size, 100px)
+    ) minmax(0, 1fr);
+  gap: var(--product-gallery-gap, 10px);
+  align-items: start;
+  min-width: 0;
+}
+.peach-product-shell .gallery-thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: var(--product-gallery-gap, 10px);
+  overflow: visible;
+}
+.peach-product-shell .gallery-thumbnails button {
+  flex: none;
+  width: 100%;
+  min-height: 44px;
+}
+.peach-product-shell .gallery-thumbnails img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+.peach-product-shell .gallery-stage {
+  width: 100%;
+  min-width: 0;
+}
+.peach-product-shell .gallery-item img,
+.peach-product-shell .gallery-item video,
+.peach-product-shell .gallery-item iframe,
+.peach-product-shell .gallery-item model-viewer {
+  height: var(--gallery-height, 797px);
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+.peach-product-shell .gallery-arrow {
+  width: 44px;
+  height: 44px;
+}
+.peach-product-shell .product-info h1 {
+  font-family: var(--heading-font, Georgia, serif);
+  font-size: var(--product-title-size, 36px);
+  overflow-wrap: anywhere;
+}
+.peach-product-shell .product-form {
+  margin-bottom: var(--product-description-spacing, 23px);
+}
+.peach-product-shell .add-to-cart {
+  background: var(--product-button-color, #317657);
+}
+.peach-product-shell .add-to-cart:hover {
+  filter: brightness(0.93);
+}
+.peach-product-shell .product-description {
+  font-family: var(--product-description-font, var(--body-font));
+  font-size: var(--product-description-size, 16px);
+  line-height: var(--product-description-leading, 1.6);
+  max-height: none;
+  overflow: visible;
+  overflow-wrap: anywhere;
+}
+.peach-product-shell .product-description img {
+  max-width: 100%;
+  height: auto;
+}
+.peach-product-shell .quantity-control button {
+  min-height: 44px;
+}
+@media (max-width: 991px) {
+  .peach-product-shell .product-gallery {
+    --active-thumbnail-size: min(var(--product-thumbnail-size, 100px), 72px);
+  }
+  .peach-product-shell .gallery-item img,
+  .peach-product-shell .gallery-item video,
+  .peach-product-shell .gallery-item iframe,
+  .peach-product-shell .gallery-item model-viewer {
+    height: min(var(--gallery-height, 797px), 560px);
+  }
+}
+@media (max-width: 767px) {
+  .peach-product-shell .product-detail {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+  .peach-product-shell .product-gallery {
+    --active-thumbnail-size: min(var(--product-thumbnail-size, 100px), 56px);
+  }
+  .peach-product-shell .gallery-item img,
+  .peach-product-shell .gallery-item video,
+  .peach-product-shell .gallery-item iframe,
+  .peach-product-shell .gallery-item model-viewer {
+    height: var(--product-mobile-image-height, 500px);
+    min-height: 0;
+  }
+  .peach-product-shell .product-info h1 {
+    font-size: var(--product-mobile-title-size, 32px);
+  }
+}

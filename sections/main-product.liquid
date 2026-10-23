@@ -1,9 +1,12 @@
+{{ 'peach-product.css' | asset_url | stylesheet_tag }}
 {% assign selected_variant = product.selected_or_first_available_variant %}
 {% assign initial_media = selected_variant.featured_media | default: product.featured_media | default: product.media.first %}
-<div class="container product-detail" data-product-section style="--product-gap: {{ section.settings.gap }}px; --gallery-height: {{ section.settings.gallery_height }}px">
+<div class="container peach-product-shell" style="--product-gap: {{ section.settings.gap }}px; --gallery-height: {{ section.settings.gallery_height }}px; --product-image-column: {{ section.settings.image_column_width }}%; --product-thumbnail-size: {{ section.settings.thumbnail_size }}px; --product-gallery-gap: {{ section.settings.gallery_spacing }}px; --product-mobile-image-height: {{ section.settings.mobile_gallery_height }}px; --product-title-size: {{ section.settings.title_size }}px; --product-mobile-title-size: {{ section.settings.mobile_title_size }}px; --product-button-color: {{ section.settings.add_to_cart_color | default: settings.button_color | default: '#317657' }}; --product-description-size: {{ section.settings.description_size }}px; --product-description-leading: {{ section.settings.description_line_height | divided_by: 100.0 }}; --product-description-spacing: {{ section.settings.description_spacing }}px; --product-description-font: {% if section.settings.description_font == 'heading' %}var(--heading-font){% else %}var(--body-font){% endif %}">
+{% if section.settings.show_breadcrumbs %}{% render 'product-breadcrumbs', product: product, collection: collection, preferred_collection: section.settings.breadcrumb_collection %}{% endif %}
+<div class="product-detail" data-product-section>
 <div class="product-gallery" data-gallery>
 <div class="gallery-thumbnails" role="group" aria-label="{{ 'product.gallery' | t }}">
-{% for media in product.media %}<button type="button" data-media-target="{{ section.id }}-{{ media.id }}" aria-label="{{ 'product.view_media' | t }} {{ forloop.index }}" aria-pressed="{% if media.id == initial_media.id %}true{% else %}false{% endif %}">{{ media.preview_image | image_url: width: 200 | image_tag: widths: '100, 200', sizes: '100px', loading: 'lazy', alt: media.alt }}</button>{% endfor %}
+{% for media in product.media %}<button type="button" data-media-target="{{ section.id }}-{{ media.id }}" aria-label="{{ 'product.view_media' | t }} {{ forloop.index }}" aria-pressed="{% if media.id == initial_media.id %}true{% else %}false{% endif %}">{{ media.preview_image | image_url: width: 200 | image_tag: widths: '100, 200', sizes: '140px', loading: 'lazy', alt: media.alt }}</button>{% endfor %}
 </div>
 <div class="gallery-stage">
 {% for media in product.media %}<div id="{{ section.id }}-{{ media.id }}" class="gallery-item" data-media-panel{% unless media.id == initial_media.id %} hidden{% endunless %}>
@@ -12,7 +15,7 @@
 {% if product.media.size > 1 %}<button type="button" class="gallery-arrow prev" data-gallery-step="-1" aria-label="{{ 'product.previous' | t }}">‹</button><button type="button" class="gallery-arrow next" data-gallery-step="1" aria-label="{{ 'product.next' | t }}">›</button>{% endif %}
 </div><noscript><style>#shopify-section-{{ section.id }} .gallery-item[hidden]{display:block}#shopify-section-{{ section.id }} .gallery-arrow,#shopify-section-{{ section.id }} .gallery-thumbnails{display:none}</style></noscript>
 </div>
-<div class="product-info"><h1>{{ product.title | escape }}</h1><p class="product-price"><span data-product-price>{{ selected_variant.price | money }}</span> <s data-compare-price{% unless selected_variant.compare_at_price > selected_variant.price %} hidden{% endunless %}>{{ selected_variant.compare_at_price | money }}</s></p>
+<div class="product-info"><h1>{{ product.title | escape }}</h1><p class="product-price" role="status" aria-live="polite" aria-atomic="true"><span data-product-price>{{ selected_variant.price | money }}</span> <s data-compare-price{% unless selected_variant.compare_at_price > selected_variant.price %} hidden{% endunless %}>{{ selected_variant.compare_at_price | money }}</s></p>
 {% assign product_form_id = 'ProductForm-' | append: section.id %}
 {% form 'product', product, id: product_form_id, class: 'product-form' %}
 {% unless product.has_only_default_variant %}<label for="Variant-{{ section.id }}">{{ 'product.options' | t }}</label>{% endunless %}
@@ -25,6 +28,7 @@
 <div class="rte product-description">{{ product.description }}</div>
 {% for block in section.blocks %}{% case block.type %}{% when '@app' %}{% render block %}{% when 'text' %}<div class="rte" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>{% when 'accordion' %}<details class="product-accordion" {{ block.shopify_attributes }}><summary>{{ block.settings.heading | escape }}</summary><div class="rte">{{ block.settings.text }}</div></details>{% endcase %}{% endfor %}
 </div></div>
+</div>
 <script type="application/ld+json">{{ product | structured_data }}</script>
 
 {% schema %}
@@ -50,6 +54,130 @@
       "max": 997,
       "step": 10,
       "default": 797,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "Show breadcrumbs",
+      "default": true
+    },
+    {
+      "type": "collection",
+      "id": "breadcrumb_collection",
+      "label": "Preferred breadcrumb collection",
+      "info": "Used if the product belongs to it and no valid collection is in the current URL. Otherwise the first associated collection is shown."
+    },
+    {
+      "type": "range",
+      "id": "image_column_width",
+      "label": "Gallery column width",
+      "min": 40,
+      "max": 60,
+      "step": 1,
+      "default": 52,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "gallery_spacing",
+      "label": "Gallery and thumbnail spacing",
+      "min": 4,
+      "max": 40,
+      "step": 2,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "thumbnail_size",
+      "label": "Desktop thumbnail size",
+      "min": 60,
+      "max": 140,
+      "step": 2,
+      "default": 100,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_gallery_height",
+      "label": "Mobile main image height",
+      "min": 300,
+      "max": 700,
+      "step": 10,
+      "default": 500,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Product title size",
+      "min": 28,
+      "max": 56,
+      "step": 1,
+      "default": 36,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_size",
+      "label": "Mobile product title size",
+      "min": 24,
+      "max": 48,
+      "step": 1,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "add_to_cart_color",
+      "label": "Add to Cart button color",
+      "info": "Leave empty to use the theme button color."
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Description text size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "description_font",
+      "label": "Description font",
+      "options": [
+        {
+          "value": "body",
+          "label": "Body font"
+        },
+        {
+          "value": "heading",
+          "label": "Heading font"
+        }
+      ],
+      "default": "body"
+    },
+    {
+      "type": "range",
+      "id": "description_line_height",
+      "label": "Description line spacing",
+      "min": 120,
+      "max": 200,
+      "step": 5,
+      "default": 160,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "description_spacing",
+      "label": "Space above description",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "default": 23,
       "unit": "px"
     }
   ],

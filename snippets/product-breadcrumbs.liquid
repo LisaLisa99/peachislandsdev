@@ -1,0 +1,21 @@
+{% assign breadcrumb_collection = nil %}
+{% if collection != blank %}
+  {% assign matching_collection = product.collections | where: 'id', collection.id | first %}
+  {% if matching_collection != blank %}{% assign breadcrumb_collection = matching_collection %}{% endif %}
+{% endif %}
+{% if breadcrumb_collection == nil and preferred_collection != blank %}
+  {% assign matching_collection = product.collections | where: 'id', preferred_collection.id | first %}
+  {% if matching_collection != blank %}{% assign breadcrumb_collection = matching_collection %}{% endif %}
+{% endif %}
+{% if breadcrumb_collection == nil %}
+  {% for associated_collection in product.collections %}
+    {% unless associated_collection.handle == 'all' or associated_collection.handle == 'frontpage' %}{% assign breadcrumb_collection = associated_collection %}{% break %}{% endunless %}
+  {% endfor %}
+{% endif %}
+<nav class="product-breadcrumbs" aria-label="{{ 'breadcrumbs.label' | t }}">
+  <ol>
+    <li><a href="{{ routes.root_url }}">{{ 'breadcrumbs.home' | t }}</a></li>
+    {% if breadcrumb_collection != nil %}<li><span aria-hidden="true">›</span><a href="{{ breadcrumb_collection.url }}">{{ breadcrumb_collection.title | escape }}</a></li>{% endif %}
+    <li><span aria-hidden="true">›</span><span aria-current="page">{{ product.title | escape }}</span></li>
+  </ol>
+</nav>

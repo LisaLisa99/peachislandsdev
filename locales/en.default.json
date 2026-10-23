@@ -86,5 +86,9 @@
     "rating": "Rated {{ rating }} out of {{ scale }} from {{ count }} reviews",
     "choose_product": "Choose a Shopify product for this block.",
     "choose_collection": "Choose a collection with products."
+  },
+  "breadcrumbs": {
+    "label": "Breadcrumb navigation",
+    "home": "Home"
   }
 }
