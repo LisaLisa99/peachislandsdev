@@ -1,2 +1,10 @@
-<section class="content-section reading"><p class="eyebrow">404</p><h1>A little off the island.</h1><p>We couldn't find that page.</p><a class="button" href="{{ routes.root_url }}">Return home</a></section>
-{% schema %}{"name":"Page not found","settings":[]}{% endschema %}
+<div class="container reading"><p>404</p><h1>{{ 'general.not_found' | t }}</h1><a class="button" href="{{ routes.root_url }}">{{ 'general.home' | t }}</a></div>
+
+{% schema %}
+{
+  "name": "Page not found",
+  "tag": "section",
+  "settings": [],
+  "class": "pi-section"
+}
+{% endschema %}

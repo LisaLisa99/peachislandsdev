@@ -1,0 +1,10 @@
+<div class="container reading"><h1>{{ blog.title | escape }}</h1>{% paginate blog.articles by 12 %}{% for article in blog.articles %}<article><h2><a href="{{ article.url }}">{{ article.title | escape }}</a></h2>{% if article.image %}{{ article.image | image_url: width: 1200 | image_tag: widths: '600, 900, 1200', sizes: '80vw', loading: 'lazy' }}{% endif %}<div class="rte">{{ article.excerpt_or_content | strip_html | truncatewords: 60 }}</div></article>{% endfor %}{{ paginate | default_pagination }}{% endpaginate %}</div>
+
+{% schema %}
+{
+  "name": "Blog",
+  "tag": "section",
+  "settings": [],
+  "class": "pi-section"
+}
+{% endschema %}

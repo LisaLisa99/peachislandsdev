@@ -1,38 +1,50 @@
-<header class="site-header" style="--logo-width: {{ section.settings.logo_width }}px; --mobile-logo-width: {{ section.settings.mobile_logo_width }}px; --logo-padding: {{ section.settings.logo_padding }}px">
-  {% if section.settings.announcement != blank %}<div class="announcement">{{ section.settings.announcement | escape }}</div>{% endif %}
-  <div class="header-brand">
-    <a class="brand" href="{{ routes.root_url }}" aria-label="{{ shop.name | escape }} home">
-      {% if section.settings.logo != blank %}
-        {% assign logo_alt = section.settings.logo.alt | default: shop.name %}
-        {{ section.settings.logo | image_url: width: 1600 | image_tag: widths: '200, 320, 460, 640, 920, 1200, 1600', sizes: '(max-width: 749px) 80vw, 600px', alt: logo_alt, class: 'brand-image', loading: 'eager' }}
-      {% else %}<span class="brand-name">{{ shop.name | escape }}</span>{% endif %}
-    </a>
-    <a class="cart-link" href="{{ routes.cart_url }}">Bag ({{ cart.item_count }})</a>
-  </div>
-  <nav class="desktop-nav" aria-label="Main navigation">
-    <ul>{% for link in section.settings.menu.links %}<li><a href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title | escape }}</a>{% if link.links != blank %}<ul class="nav-children">{% for child in link.links %}<li><a href="{{ child.url }}">{{ child.title | escape }}</a>{% if child.links != blank %}<ul>{% for grandchild in child.links %}<li><a href="{{ grandchild.url }}">{{ grandchild.title | escape }}</a></li>{% endfor %}</ul>{% endif %}</li>{% endfor %}</ul>{% endif %}</li>{% endfor %}</ul>
-  </nav>
-  <details class="mobile-nav"><summary>Menu</summary><nav aria-label="Mobile navigation"><ul>{% for link in section.settings.menu.links %}<li><a href="{{ link.url }}">{{ link.title | escape }}</a>{% for child in link.links %}<ul><li><a href="{{ child.url }}">{{ child.title | escape }}</a>{% for grandchild in child.links %}<ul><li><a href="{{ grandchild.url }}">{{ grandchild.title | escape }}</a></li></ul>{% endfor %}</li></ul>{% endfor %}</li>{% endfor %}</ul></nav></details>
+<header class="site-header" style="--logo-width: {{ section.settings.logo_width }}px; --mobile-logo-width: {{ section.settings.mobile_logo_width }}px; --logo-space: {{ section.settings.logo_spacing }}px; --bar-bg: {{ section.settings.bar_background }}">
+{% if section.settings.show_bar %}
+  <div class="utility-bar"><div class="container utility-inner">
+    {% render 'social-links' %}
+    <p class="announcement">{{ section.settings.announcement | escape }}</p>
+    <div class="utility-actions">
+      {% if localization.available_countries.size > 1 %}
+        {% assign localization_id = 'Country-' | append: section.id %}
+        {% form 'localization', id: localization_id %}
+          <label class="visually-hidden" for="{{ localization_id }}-select">{{ 'general.country' | t }}</label>
+          <select id="{{ localization_id }}-select" name="country_code" onchange="this.form.submit()">{% for country in localization.available_countries %}<option value="{{ country.iso_code }}"{% if country.iso_code == localization.country.iso_code %} selected{% endif %}>{{ country.name | escape }} ({{ country.currency.iso_code }})</option>{% endfor %}</select>
+          <noscript><button type="submit">{{ 'general.update' | t }}</button></noscript>
+        {% endform %}
+      {% else %}<span class="country-label">{{ localization.country.name | escape }} ({{ localization.country.currency.iso_code }})</span>{% endif %}
+      {% if shop.customer_accounts_enabled %}<a class="account-link" href="{{ routes.account_url }}">{% if customer %}{{ 'general.hello' | t }} {{ customer.first_name | escape }}{% else %}{{ 'general.account' | t }}{% endif %}</a>{% endif %}
+      <a class="cart-icon" href="{{ routes.cart_url }}" aria-label="{{ 'cart.title' | t }} ({{ cart.item_count }})"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h3l3 13h11l3-10H6M9 20h.01M18 20h.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="cart-count">{{ cart.item_count }}</span></a>
+    </div>
+  </div></div>
+{% endif %}
+<div class="brand-row container"><a class="brand" href="{{ routes.root_url }}" aria-label="{{ shop.name | escape }}">
+{% if section.settings.logo %}{{ section.settings.logo | image_url: width: 1600 | image_tag: widths: '320, 459, 640, 920, 1200, 1600', sizes: '(max-width: 749px) 80vw, 600px', alt: shop.name, loading: 'eager' }}{% else %}<img src="{{ 'PeachIslands.png' | asset_url }}" width="459" height="52" alt="Peach Islands" loading="eager">{% endif %}
+</a></div>
+<nav class="desktop-nav container" aria-label="{{ 'general.navigation' | t }}"><ul>{% render 'menu-links', menu: section.settings.menu %}</ul></nav>
+<details class="mobile-nav container"><summary>{{ 'general.menu' | t }}</summary><nav aria-label="{{ 'general.navigation' | t }}"><ul>{% render 'menu-links', menu: section.settings.menu %}</ul></nav></details>
+{% unless section.settings.show_bar %}<div class="header-cart"><a href="{{ routes.cart_url }}">{{ 'cart.title' | t }} ({{ cart.item_count }})</a></div>{% endunless %}
 </header>
+
 {% schema %}
 {
   "name": "Header",
+  "tag": "section",
   "settings": [
     {
       "type": "image_picker",
       "id": "logo",
       "label": "Official logo",
-      "info": "Upload the original Peach Islands logo. The image is displayed without cropping, filters, or recoloring."
+      "info": "The original logo is included and used until you choose a replacement. No cropping, recoloring, or filters are applied."
     },
     {
       "type": "range",
       "id": "logo_width",
       "label": "Desktop logo width",
       "min": 160,
-      "max": 600,
+      "max": 700,
       "step": 10,
-      "unit": "px",
-      "default": 460
+      "default": 460,
+      "unit": "px"
     },
     {
       "type": "range",
@@ -41,31 +53,44 @@
       "min": 120,
       "max": 320,
       "step": 10,
-      "unit": "px",
-      "default": 230
+      "default": 260,
+      "unit": "px"
     },
     {
       "type": "range",
-      "id": "logo_padding",
-      "label": "Logo vertical spacing",
+      "id": "logo_spacing",
+      "label": "Logo top spacing",
       "min": 12,
       "max": 60,
       "step": 2,
-      "unit": "px",
-      "default": 28
+      "default": 26,
+      "unit": "px"
     },
     {
       "type": "link_list",
       "id": "menu",
-      "label": "Navigation menu",
+      "label": "Main menu",
       "default": "main-menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_bar",
+      "label": "Show utility bar",
+      "default": true
     },
     {
       "type": "text",
       "id": "announcement",
       "label": "Announcement",
-      "default": "Welcome to Peach Islands"
+      "default": "Free shipping on orders over $100"
+    },
+    {
+      "type": "color",
+      "id": "bar_background",
+      "label": "Utility bar background",
+      "default": "#fceae8"
     }
-  ]
+  ],
+  "class": "pi-section"
 }
 {% endschema %}

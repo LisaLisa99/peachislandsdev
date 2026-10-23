@@ -1,0 +1,148 @@
+{
+  "products": [
+    {
+      "source": "wild-bloom.html",
+      "title": "WILD BLOOM\n | ​Journal",
+      "images": [
+        "WildBloomStraightView.jpg",
+        "WildBoomInsidePreview.png",
+        "WildBloomJournalinaCozyStillLife.png",
+        "BloomWildlyDreamFreely.png"
+      ],
+      "note": "Source reference only. Use the matching Shopify product; no product or price has been created or changed."
+    },
+    {
+      "source": "wild-bloom-writing-set.html",
+      "title": "WILD BLOOM\n | ​Writing Set",
+      "images": [
+        "LetterandEnvStacikercopy.jpg",
+        "WritingSetPreview3.jpg",
+        "WritingSetPreview2copy.jpg"
+      ],
+      "note": "Source reference only. Use the matching Shopify product; no product or price has been created or changed."
+    },
+    {
+      "source": "GardeniaLane.html",
+      "title": "Gardenia Lane\n | Letter Writing Set",
+      "images": [
+        "PLA06-4_540x.jpg.webp",
+        "TEA13-4_300x.jpg.webp"
+      ],
+      "note": "Source reference only. Use the matching Shopify product; no product or price has been created or changed."
+    }
+  ],
+  "journal_cards": [
+    {
+      "title": "Wild Boom",
+      "image": "PeachIsland_WildBoomJournal.jpg"
+    },
+    {
+      "title": "Wild at Heart",
+      "image": "PeachIsland_WildatheartJournal.jpg"
+    },
+    {
+      "title": "Dream Beyond",
+      "image": "PeachIsland_dreamBeyondJournal.jpg"
+    },
+    {
+      "title": "Dream freely",
+      "image": "PeachIsland_dreamfreelyjournal1.jpg"
+    },
+    {
+      "title": "Wild WOnder",
+      "image": "CoverMOckupExport.jpg"
+    },
+    {
+      "title": "A Little Idea",
+      "image": "CoverMOckupExport2.jpg"
+    },
+    {
+      "title": "Wild",
+      "image": "CoverMOckupExport3.jpg"
+    },
+    {
+      "title": "Yummy",
+      "image": "CoverMOckupExport4.jpg"
+    },
+    {
+      "title": "This & That",
+      "image": "CoverMOckupExport5.jpg"
+    },
+    {
+      "title": "Thoughts",
+      "image": "CoverMOckupExport6.jpg"
+    },
+    {
+      "title": "Wonder",
+      "image": "CoverMOckupExport16.jpg"
+    },
+    {
+      "title": "Wonder",
+      "image": "CoverMOckupExport8.jpg"
+    },
+    {
+      "title": "Fierce",
+      "image": "CoverMOckupExport24.jpg"
+    },
+    {
+      "title": "Little Moments",
+      "image": "CoverMOckupExport12.jpg"
+    },
+    {
+      "title": "Thousand Dreams",
+      "image": "CoverMOckupExport9.jpg"
+    },
+    {
+      "title": "Thoughts",
+      "image": "CoverMOckupExport10.jpg"
+    },
+    {
+      "title": "Collected Dreams",
+      "image": "CoverMOckupExport11.jpg"
+    },
+    {
+      "title": "Collected",
+      "image": "CoverMOckupExport14.jpg"
+    },
+    {
+      "title": "Beautiful",
+      "image": "CoverMOckupExport15.jpg"
+    },
+    {
+      "title": "Wonder",
+      "image": "CoverMOckupExport7.jpg"
+    },
+    {
+      "title": "LIfe in Bloom",
+      "image": "CoverMOckupExport17.jpg"
+    },
+    {
+      "title": "Wonderfull",
+      "image": "CoverMOckupExport18.jpg"
+    },
+    {
+      "title": "Wildly",
+      "image": "CoverMOckupExport25.jpg"
+    },
+    {
+      "title": "Gathered",
+      "image": "CoverMOckupExport26.jpg"
+    },
+    {
+      "title": "Reflections",
+      "image": "DreamJournal.jpg"
+    },
+    {
+      "title": "Weirdest Dream",
+      "image": "WeirdestDrem.jpg"
+    },
+    {
+      "title": "Dreamers",
+      "image": "dreamsthatspeak.jpg"
+    },
+    {
+      "title": "Ideas Run Wild",
+      "image": "Pawsitive.jpg"
+    }
+  ]
+}

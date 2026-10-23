@@ -1,2 +1,92 @@
-<section class="content-section product-detail"><div>{% if product.featured_image %}{{ product.featured_image | image_url: width: 1400 | image_tag: widths: '600, 1000, 1400', sizes: '(max-width: 749px) 100vw, 50vw', loading: 'eager' }}{% endif %}</div><div><p class="eyebrow">{{ product.vendor | escape }}</p><h1>{{ product.title | escape }}</h1><p>{{ product.price | money }}</p>{% form 'product', product %}<label for="Variant-{{ section.id }}">Choose an option</label><select id="Variant-{{ section.id }}" name="id">{% for variant in product.variants %}<option value="{{ variant.id }}"{% if variant == product.selected_or_first_available_variant %} selected{% endif %}{% unless variant.available %} disabled{% endunless %}>{{ variant.title | escape }} — {{ variant.price | money }}{% unless variant.available %} — Sold out{% endunless %}</option>{% endfor %}</select><label for="Quantity-{{ section.id }}">Quantity</label><input id="Quantity-{{ section.id }}" type="number" name="quantity" value="1" min="1"><button class="button" type="submit"{% unless product.available %} disabled{% endunless %}>{% if product.available %}Add to bag{% else %}Sold out{% endif %}</button>{{ form.errors | default_errors }}{% endform %}<div class="rte">{{ product.description }}</div></div></section>
-{% schema %}{"name":"Product","settings":[]}{% endschema %}
+{% assign selected_variant = product.selected_or_first_available_variant %}
+{% assign initial_media = selected_variant.featured_media | default: product.featured_media | default: product.media.first %}
+<div class="container product-detail" data-product-section style="--product-gap: {{ section.settings.gap }}px; --gallery-height: {{ section.settings.gallery_height }}px">
+<div class="product-gallery" data-gallery>
+<div class="gallery-thumbnails" role="group" aria-label="{{ 'product.gallery' | t }}">
+{% for media in product.media %}<button type="button" data-media-target="{{ section.id }}-{{ media.id }}" aria-label="{{ 'product.view_media' | t }} {{ forloop.index }}" aria-pressed="{% if media.id == initial_media.id %}true{% else %}false{% endif %}">{{ media.preview_image | image_url: width: 200 | image_tag: widths: '100, 200', sizes: '100px', loading: 'lazy', alt: media.alt }}</button>{% endfor %}
+</div>
+<div class="gallery-stage">
+{% for media in product.media %}<div id="{{ section.id }}-{{ media.id }}" class="gallery-item" data-media-panel{% unless media.id == initial_media.id %} hidden{% endunless %}>
+{% case media.media_type %}{% when 'image' %}{{ media | image_url: width: 2000 | image_tag: widths: '600, 1000, 1400, 2000', sizes: '(max-width: 767px) 100vw, 50vw', loading: 'eager', alt: media.alt }}{% when 'video' %}{{ media | video_tag: controls: true, preload: 'metadata' }}{% when 'external_video' %}{{ media | external_video_tag }}{% when 'model' %}{{ media | model_viewer_tag: reveal: 'interaction', toggleable: true }}{% endcase %}
+</div>{% else %}{{ 'product-1' | placeholder_svg_tag: 'pi-placeholder' }}{% endfor %}
+{% if product.media.size > 1 %}<button type="button" class="gallery-arrow prev" data-gallery-step="-1" aria-label="{{ 'product.previous' | t }}">‹</button><button type="button" class="gallery-arrow next" data-gallery-step="1" aria-label="{{ 'product.next' | t }}">›</button>{% endif %}
+</div><noscript><style>#shopify-section-{{ section.id }} .gallery-item[hidden]{display:block}#shopify-section-{{ section.id }} .gallery-arrow,#shopify-section-{{ section.id }} .gallery-thumbnails{display:none}</style></noscript>
+</div>
+<div class="product-info"><h1>{{ product.title | escape }}</h1><p class="product-price"><span data-product-price>{{ selected_variant.price | money }}</span> <s data-compare-price{% unless selected_variant.compare_at_price > selected_variant.price %} hidden{% endunless %}>{{ selected_variant.compare_at_price | money }}</s></p>
+{% assign product_form_id = 'ProductForm-' | append: section.id %}
+{% form 'product', product, id: product_form_id, class: 'product-form' %}
+{% unless product.has_only_default_variant %}<label for="Variant-{{ section.id }}">{{ 'product.options' | t }}</label>{% endunless %}
+<select id="Variant-{{ section.id }}" name="id" data-variant-select{% if product.has_only_default_variant %} class="visually-hidden" aria-label="{{ 'product.options' | t }}"{% endif %}>
+{% for variant in product.variants %}<option value="{{ variant.id }}" data-price="{{ variant.price | money | escape }}" data-compare="{% if variant.compare_at_price > variant.price %}{{ variant.compare_at_price | money | escape }}{% endif %}" data-available="{{ variant.available }}" data-media="{{ section.id }}-{{ variant.featured_media.id }}" data-min="{{ variant.quantity_rule.min }}" data-max="{{ variant.quantity_rule.max }}" data-step="{{ variant.quantity_rule.increment }}"{% if variant.id == selected_variant.id %} selected{% endif %}>{{ variant.title | escape }} — {{ variant.price | money }}{% unless variant.available %} — {{ 'product.sold_out' | t }}{% endunless %}</option>{% endfor %}</select>
+<label for="Quantity-{{ section.id }}">{{ 'product.quantity' | t }}</label><div class="quantity-control"><button type="button" data-quantity="-1" aria-label="{{ 'product.decrease' | t }}">−</button><input id="Quantity-{{ section.id }}" name="quantity" type="number" min="{{ selected_variant.quantity_rule.min | default: 1 }}" step="{{ selected_variant.quantity_rule.increment | default: 1 }}"{% if selected_variant.quantity_rule.max %} max="{{ selected_variant.quantity_rule.max }}"{% endif %} value="{{ selected_variant.quantity_rule.min | default: 1 }}"><button type="button" data-quantity="1" aria-label="{{ 'product.increase' | t }}">+</button></div>
+<button class="button add-to-cart" type="submit" name="add" data-add-to-cart data-add-label="{{ 'product.add' | t }}" data-sold-label="{{ 'product.sold_out' | t }}"{% unless selected_variant.available %} disabled{% endunless %}>{% if selected_variant.available %}{{ 'product.add' | t }}{% else %}{{ 'product.sold_out' | t }}{% endif %}</button>
+{{ form | payment_terms }}{{ form.errors | default_errors }}
+{% endform %}
+<div class="rte product-description">{{ product.description }}</div>
+{% for block in section.blocks %}{% case block.type %}{% when '@app' %}{% render block %}{% when 'text' %}<div class="rte" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>{% when 'accordion' %}<details class="product-accordion" {{ block.shopify_attributes }}><summary>{{ block.settings.heading | escape }}</summary><div class="rte">{{ block.settings.text }}</div></details>{% endcase %}{% endfor %}
+</div></div>
+<script type="application/ld+json">{{ product | structured_data }}</script>
+
+{% schema %}
+{
+  "name": "Product",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Gallery and text gap",
+      "min": 20,
+      "max": 100,
+      "step": 2,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "gallery_height",
+      "label": "Desktop gallery height",
+      "min": 397,
+      "max": 997,
+      "step": 10,
+      "default": 797,
+      "unit": "px"
+    }
+  ],
+  "class": "pi-section",
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "accordion",
+      "name": "Collapsible text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Shipping and returns"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12
+}
+{% endschema %}

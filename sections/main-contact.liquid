@@ -1,0 +1,10 @@
+<div class="container reading"><h1>{{ page.title | escape }}</h1><div class="rte">{{ page.content }}</div>{% assign contact_id = 'Contact-' | append: section.id %}{% form 'contact', id: contact_id, class: 'contact-form' %}{% if form.posted_successfully? %}<p role="status">{{ 'contact.success' | t }}</p>{% endif %}{{ form.errors | default_errors }}<label for="{{ contact_id }}-name">{{ 'general.name' | t }}</label><input id="{{ contact_id }}-name" name="contact[name]" type="text" autocomplete="name" value="{{ form.name | default: customer.name | escape }}"><label for="{{ contact_id }}-email">{{ 'general.email' | t }}</label><input id="{{ contact_id }}-email" name="contact[email]" type="email" required autocomplete="email" value="{{ form.email | default: customer.email | escape }}"><label for="{{ contact_id }}-body">{{ 'contact.message' | t }}</label><textarea id="{{ contact_id }}-body" name="contact[body]" required>{{ form.body | escape }}</textarea><button class="button" type="submit">{{ 'contact.send' | t }}</button>{% endform %}</div>
+
+{% schema %}
+{
+  "name": "Contact",
+  "tag": "section",
+  "settings": [],
+  "class": "pi-section"
+}
+{% endschema %}

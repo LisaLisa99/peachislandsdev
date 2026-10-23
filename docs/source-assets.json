@@ -1,0 +1,332 @@
+[
+  {
+    "file": "APG159b_360x.jpg.webp",
+    "width": 360,
+    "height": 360,
+    "sha256": "2f95fb97477ca60678bb6605133b02ff66bb71f4158ce288a0ef2356a0a1399d"
+  },
+  {
+    "file": "BirthMonthFlowers.jpg",
+    "width": 1034,
+    "height": 1034,
+    "sha256": "11abc8c05db805ab7faa4042cd8624d1347ee2ddf7d1a474869b71bda3ca6285"
+  },
+  {
+    "file": "BloomWildlyDreamFreely.png",
+    "width": 1374,
+    "height": 1145,
+    "sha256": "85167886523470f4b9ccfd451fc6418cd0fc60e394e7faf86e4960aa324eb465"
+  },
+  {
+    "file": "CoverMOckupExport.jpg",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "22539148eeaf7c3d120b2e21f74e3efb968a9bbd8b8b62c0c7e684d0361a164c"
+  },
+  {
+    "file": "CoverMOckupExport10.jpg",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "23b2d66e6826cecb571278b298ad031ae6b19a20911572a0a2327a109306959f"
+  },
+  {
+    "file": "CoverMOckupExport11.jpg",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "b9cb63317e1844c3f488d3ad9223b2089a8b9ae4dd09022b0abc34f40622c3b7"
+  },
+  {
+    "file": "CoverMOckupExport12.jpg",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "dbd11feda0938e69a9c35b857c9ed573b9ffd9cb18f087cc7d3d15532f203587"
+  },
+  {
+    "file": "CoverMOckupExport14.jpg",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "5aa1c213779206b0799ba18b4733c23f1c245f8f60d6ac315631411e87f9c64e"
+  },
+  {
+    "file": "CoverMOckupExport15.jpg",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "b522ceda7e7528ac08eae6ce9269e3b3dd53efa38d52fb2a03e8ce1cb410e3f3"
+  },
+  {
+    "file": "CoverMOckupExport16.jpg",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "a10a8b4768ed6976608abb927d2be02437d93e605b2d9758ba7ce1b4bb7f56ff"
+  },
+  {
+    "file": "CoverMOckupExport17.jpg",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "a3757787e03f67c0d8fad8d8eb615ef672fb6235fa1f16e439652ffc4802fd25"
+  },
+  {
+    "file": "CoverMOckupExport18.jpg",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "b5a8a12f30392674bdbb6a22fa3aedae62d8c27c54e944630dfa404f314b77da"
+  },
+  {
+    "file": "CoverMOckupExport2.jpg",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "5d7be5bba59b59353b20b451cc0f287e3250dd90d62f8cf012c20dc1e782f830"
+  },
+  {
+    "file": "CoverMOckupExport24.jpg",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "7aca73a0f35aaba43fe9cac9c8fe5b32649014ca94184b960c7ea23fd162ec87"
+  },
+  {
+    "file": "CoverMOckupExport25.jpg",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "bf9237c111df262198857e9cb1c2bd287bb4a39a2c8cd00a620e99794ced813b"
+  },
+  {
+    "file": "CoverMOckupExport26.jpg",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "09e8c4a0abc72021a55867fb9f681f8016e4651b8109bc7467dd8f345d2971c3"
+  },
+  {
+    "file": "CoverMOckupExport3.jpg",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "24683b021c0f541e1a6109448535de2603cec2f3d122fab58cd27152f6361ded"
+  },
+  {
+    "file": "CoverMOckupExport4.jpg",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "22e14c1bb12b4ba13da4c99e6b1228c5891baba8f75edb3a6ffec2b481c010c1"
+  },
+  {
+    "file": "CoverMOckupExport5.jpg",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "c06980d327c8440bfd960fce9e025cabc46b2bf9c416919382d1b7ab100b6899"
+  },
+  {
+    "file": "CoverMOckupExport6.jpg",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "51c3d89b8f112a217e6095a7847c4279197c83fe2088870df3ef48e1e29e2789"
+  },
+  {
+    "file": "CoverMOckupExport7.jpg",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "7c6f12c85a65ea9a2b7f4c2a56c324f6f7d7f8cca9ca2727c9f73072a333f034"
+  },
+  {
+    "file": "CoverMOckupExport8.jpg",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "55d6cfe99d4be7701cce026fc389b56fd6a07353f3befc3f13e87b2c2fe868b1"
+  },
+  {
+    "file": "CoverMOckupExport9.jpg",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "8a09d1995578583b6399fbf13c12d2563544f674eb82e990165fe73c7f792c82"
+  },
+  {
+    "file": "DreamJournal.jpg",
+    "width": 1200,
+    "height": 1200,
+    "sha256": "9ce414eb65d8f0226f77cc6850db1c14e0f0f003ea684c75590863502b070483"
+  },
+  {
+    "file": "EN022-2_fbcb0ac0-a93e-47dd-b111-89b73e79a0b7_540x-1.jpg.webp",
+    "width": 540,
+    "height": 540,
+    "sha256": "b3626780a16ddb5c6f96c5c04b5eae67b875930ea1678753185d99066e140f14"
+  },
+  {
+    "file": "IMG_9979-2_540x.jpg.webp",
+    "width": 540,
+    "height": 540,
+    "sha256": "3c0d37723c6501055cb6c3fc0e9d6c2a626ee68d5d2e747c9e1413d5fec0d14c"
+  },
+  {
+    "file": "LetterandEnvStacikercopy.jpg",
+    "width": 1169,
+    "height": 1175,
+    "sha256": "1d47bc4f967ea6ec4739a23dbd08a7d0f2a090fe1317f11f1e56900c35e0129f"
+  },
+  {
+    "file": "NB03.webp",
+    "width": 1200,
+    "height": 1200,
+    "sha256": "32e40768a12a9011504be50d2e421647a19fbe65835cf6bd469a83fe62d93f6c"
+  },
+  {
+    "file": "NB04.webp",
+    "width": 1200,
+    "height": 1200,
+    "sha256": "2a2b661f873a30f4178b23ce00cca5776f87ea10f7a82555929b5ca7fc791503"
+  },
+  {
+    "file": "NB09.webp",
+    "width": 1200,
+    "height": 1200,
+    "sha256": "627ae32cf176c25dc27694e0eb3c22ff89b5e77a6d02c98adf135d642fbfc9e7"
+  },
+  {
+    "file": "NJ05.webp",
+    "width": 1200,
+    "height": 1200,
+    "sha256": "16dd5bdbe34495d595f75f8c029c71e94be2dbafb921e6aeb784ee3da300c4cd"
+  },
+  {
+    "file": "NaplesTeaTowelPreview.jpg",
+    "width": 300,
+    "height": 300,
+    "sha256": "9edbc721923cc73e366f6807bd61b07282dc755302bb49da66aad8abfca79a02"
+  },
+  {
+    "file": "PEN01-2_300x.jpg.webp",
+    "width": 300,
+    "height": 300,
+    "sha256": "0c164c796157c7749577b1eef225619a3f52e4c6a88408ec65818c5541281388"
+  },
+  {
+    "file": "PLA06-4_540x.jpg.webp",
+    "width": 540,
+    "height": 540,
+    "sha256": "7d4a577222513752c8643f0c7f08d9da3724cc1f718b315ad0ad39299dac836d"
+  },
+  {
+    "file": "Pawsitive.jpg",
+    "width": 1200,
+    "height": 1200,
+    "sha256": "b45ecd746340142be78b9c1c645413302004925134e9fa32fa89c6b4cba6516f"
+  },
+  {
+    "file": "PeachIsland_WildBoomJournal.jpg",
+    "width": 1200,
+    "height": 1200,
+    "sha256": "ee74d72e37752a28cdcb490792942c97f4edbf87aff93e36d416cad86aaca623"
+  },
+  {
+    "file": "PeachIsland_WildatheartJournal.jpg",
+    "width": 1200,
+    "height": 1200,
+    "sha256": "71a96003251dfe2264433f9ba58f506dd247c4262e5a7aecfbb404c795096b7c"
+  },
+  {
+    "file": "PeachIsland_dreamBeyondJournal.jpg",
+    "width": 1200,
+    "height": 1200,
+    "sha256": "b6d4567ed2bfa4a4e70c362286bce9fbc53be54a86d5ffa9a0e8997108983106"
+  },
+  {
+    "file": "PeachIsland_dreamfreelyjournal1.jpg",
+    "width": 1200,
+    "height": 1200,
+    "sha256": "05d8c85209d7e7cf452031acddca400f94949fa7843a609a58bdaac0b9f42f69"
+  },
+  {
+    "file": "PeachIslands.png",
+    "width": 459,
+    "height": 52,
+    "sha256": "21218aaf0ff0f1c8e3ed97cb9c2d5c5fb323cf7010b5f87e96d6bbc1ccdda8c3"
+  },
+  {
+    "file": "Sample2.jpg",
+    "width": 852,
+    "height": 743,
+    "sha256": "f99657e236a13daadd7356cfa402b8ab048a76b9c6c7c68695a771ec7cf1b6bd"
+  },
+  {
+    "file": "ScreenShot2026-05-09at10.42.08AM.png",
+    "width": 1193,
+    "height": 1166,
+    "sha256": "555bb490826d721538ea5ac7ef34311b16f5681f5220f143226926a2797eba7f"
+  },
+  {
+    "file": "TEA13-4_300x.jpg.webp",
+    "width": 300,
+    "height": 300,
+    "sha256": "eac113653b1600b2f067b8c06a5b96d58a28fd49fc351d20e0fb702619ff1315"
+  },
+  {
+    "file": "TP04-2_1950x.jpg",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "ab7d8c68ef42e462244319ec3cd45b48cd9e86a70a84802fcfa23e341da4c0f4"
+  },
+  {
+    "file": "WP027-S-b_540x.jpg.webp",
+    "width": 540,
+    "height": 540,
+    "sha256": "5803c8534d112534e35c274374aea4ae43f55fc7809e3b20bf3e4e2a5d0fed6f"
+  },
+  {
+    "file": "WeirdestDrem.jpg",
+    "width": 1200,
+    "height": 1200,
+    "sha256": "12f65c61b1be4f854dc8665ba8bdf42997b151f229885065f0a558f38f7cd20d"
+  },
+  {
+    "file": "WildBloomJournalinaCozyStillLife.png",
+    "width": 1374,
+    "height": 1145,
+    "sha256": "c4e081bae3dc5a2ae28a80bb2e7f16b81d0e1c8b86a79250594f8ce43bce48aa"
+  },
+  {
+    "file": "WildBloomStraightView.jpg",
+    "width": 1200,
+    "height": 1200,
+    "sha256": "e4208e26a2604a7a9c3b4f88eb955df550b43c6612afb20ee12cad160037667a"
+  },
+  {
+    "file": "WildBoomInsidePreview.png",
+    "width": 1353,
+    "height": 1162,
+    "sha256": "25298a6e292c610f16ca0e7b66beec447803837f58e41e3955e0ec84b00e0d34"
+  },
+  {
+    "file": "WritingSetPreview2copy.jpg",
+    "width": 1169,
+    "height": 1175,
+    "sha256": "b5fa390b064303c64162fa549c7781bd0cd94c03c56b688ef14ef2e6e834afc9"
+  },
+  {
+    "file": "WritingSetPreview3.jpg",
+    "width": 1169,
+    "height": 1175,
+    "sha256": "223a338d2af2558c3cc575e39e4a42dab73e16a8d74026292bba8c2a89559f2f"
+  },
+  {
+    "file": "calendarsNaples.jpg",
+    "width": 300,
+    "height": 300,
+    "sha256": "7b71f8d47634cb452b43f7d166ed5672631ae377e85b8728d2bec5d3fae56116"
+  },
+  {
+    "file": "default-image.jpg",
+    "width": 2000,
+    "height": 1333,
+    "sha256": "02304d740587da3c00a397f57e7e8a1e1a84e35dbea620aeb1a157d4a537dd24"
+  },
+  {
+    "file": "dreamsthatspeak.jpg",
+    "width": 1200,
+    "height": 1200,
+    "sha256": "83469c8e64e60a742c38c2300c02bc7da378ed5d4e2f4f208cfd22c9e38f5ab1"
+  },
+  {
+    "file": "quanity1.png",
+    "width": 109,
+    "height": 54,
+    "sha256": "46aa04a9c9c0702563000869d7b0893a3668f9f4003bddf7bb05d42ea48c3e31"
+  }
+]

@@ -1,0 +1,32 @@
+<div aria-hidden="true" style="height: {{ section.settings.height }}px; background: {{ section.settings.background }}"></div>
+
+{% schema %}
+{
+  "name": "Spacing",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "height",
+      "label": "Height",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#ffffff"
+    }
+  ],
+  "class": "pi-section",
+  "presets": [
+    {
+      "name": "Spacing"
+    }
+  ]
+}
+{% endschema %}

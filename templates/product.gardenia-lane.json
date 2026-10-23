@@ -1,0 +1,64 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {}
+    },
+    "extra": {
+      "type": "peach-editorial",
+      "disabled": true,
+      "settings": {
+        "heading": "Gardenia Lane",
+        "text": "<p>A little beauty in every handwritten moment.</p>"
+      },
+      "blocks": {
+        "letter": {
+          "type": "image",
+          "settings": {
+            "original_image": "Sample2.jpg",
+            "alt": "Gardenia Lane writing set"
+          }
+        }
+      },
+      "block_order": [
+        "letter"
+      ]
+    },
+    "story": {
+      "type": "peach-editorial",
+      "settings": {
+        "background": "#f6f3ee",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "text": "<p>Discover a world of beautifully illustrated journals, stationery, and home accessories. Every design in the <a href=\"/collections/lisa-monias\">Lisa Monias Collection</a> begins with original artwork, lovingly illustrated by hand and inspired by nature, creativity, and the beauty of everyday life. From paper goods to artful gifts, each piece is thoughtfully created to bring a little color, charm, and inspiration to your day.</p>",
+        "link": "/collections/lisa-monias",
+        "button_color": "#a95459"
+      },
+      "blocks": {
+        "planner": {
+          "type": "image",
+          "settings": {
+            "original_image": "PLA06-4_540x.jpg.webp",
+            "alt": "Botanical weekly planner"
+          }
+        },
+        "towel": {
+          "type": "image",
+          "settings": {
+            "original_image": "TEA13-4_300x.jpg.webp",
+            "alt": "Botanical tea towel"
+          }
+        }
+      },
+      "block_order": [
+        "planner",
+        "towel"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "extra",
+    "story"
+  ]
+}

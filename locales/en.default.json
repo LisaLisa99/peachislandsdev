@@ -1,1 +1,75 @@
-{}
+{
+  "general": {
+    "skip": "Skip to content",
+    "view_all": "View all",
+    "shop": "Shop",
+    "menu": "Menu",
+    "navigation": "Main navigation",
+    "country": "Country and currency",
+    "update": "Update",
+    "hello": "Hi,",
+    "account": "Account",
+    "name": "Name",
+    "email": "Email",
+    "pagination": "Pagination",
+    "not_found": "A little off the island.",
+    "home": "Return home",
+    "search": "Search"
+  },
+  "product": {
+    "from": "From",
+    "sold_out": "Sold out",
+    "gallery": "Product gallery",
+    "view_media": "View media",
+    "previous": "Previous image",
+    "next": "Next image",
+    "options": "Choose an option",
+    "quantity": "Quantity",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity",
+    "add": "Add to cart"
+  },
+  "cart": {
+    "title": "Cart",
+    "empty": "Your cart is empty.",
+    "remove": "Remove",
+    "note": "Order note",
+    "total": "Total",
+    "shipping": "Shipping, taxes, and discounts calculated at checkout.",
+    "update": "Update cart",
+    "checkout": "Checkout"
+  },
+  "collection": {
+    "min": "Minimum price",
+    "max": "Maximum price",
+    "sort": "Sort by",
+    "apply": "Apply",
+    "clear": "Clear",
+    "empty": "No products found in this collection.",
+    "all": "Collections"
+  },
+  "newsletter": {
+    "success": "Thank you for subscribing. You’re on the list!"
+  },
+  "contact": {
+    "success": "Thanks for your message. We’ll be in touch.",
+    "message": "Message",
+    "send": "Send message"
+  },
+  "search": {
+    "results": "{{ count }} results for “{{ terms }}”"
+  },
+  "password": {
+    "label": "Store password",
+    "enter": "Enter store"
+  },
+  "gift_card": {
+    "title": "Your gift card",
+    "balance": "Remaining balance",
+    "disabled": "This gift card is disabled.",
+    "expired": "This gift card has expired.",
+    "code": "Use this code at checkout",
+    "expires": "Expires",
+    "wallet": "Add to Apple Wallet"
+  }
+}

@@ -1,0 +1,92 @@
+<div class="section-surface newsletter" style="--section-bg: {{ section.settings.background }}; --section-ink: {{ section.settings.text_color }}; --pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px">
+<div class="container"><h2 style="font-size: {{ section.settings.heading_size }}px">{{ section.settings.heading | escape }}</h2><div class="newsletter-copy rte">{{ section.settings.text }}</div>
+{% assign form_id = 'Newsletter-' | append: section.id %}
+{% form 'customer', id: form_id, class: 'newsletter-form' %}
+<input type="hidden" name="contact[tags]" value="newsletter">
+<label class="visually-hidden" for="{{ form_id }}-name">{{ 'general.name' | t }}</label><input id="{{ form_id }}-name" type="text" name="contact[first_name]" placeholder="{{ 'general.name' | t }}" autocomplete="given-name">
+<label class="visually-hidden" for="{{ form_id }}-email">{{ 'general.email' | t }}</label><input id="{{ form_id }}-email" type="email" name="contact[email]" placeholder="{{ 'general.email' | t }}" autocomplete="email" required {% if form.errors %}aria-invalid="true" aria-describedby="{{ form_id }}-errors"{% endif %}>
+<button class="button rose-button" type="submit">{{ section.settings.button_label | escape }}</button>
+{% if form.posted_successfully? %}<p class="form-status" role="status">{{ 'newsletter.success' | t }}</p>{% endif %}
+{% if form.errors %}<div id="{{ form_id }}-errors" class="form-status" role="alert">{{ form.errors | default_errors }}</div>{% endif %}
+{% endform %}<p class="newsletter-note">{{ section.settings.note | escape }}</p></div></div>
+
+{% schema %}
+{
+  "name": "Stay inspired newsletter",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Stay Inspired"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 24,
+      "max": 60,
+      "step": 1,
+      "default": 36,
+      "unit": "px"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Join our mailing list for beautiful freebies, early access to new collections, creative inspiration, and thoughtful little surprises delivered straight to your inbox. From stationery and journals to seasonal designs and exclusive releases, you\u2019ll always be the first to know what\u2019s blooming next.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Submit"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Footnote",
+      "default": "Only the lovely stuff. Never spam."
+    }
+  ],
+  "class": "pi-section",
+  "presets": [
+    {
+      "name": "Stay inspired newsletter"
+    }
+  ]
+}
+{% endschema %}

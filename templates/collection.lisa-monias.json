@@ -1,0 +1,44 @@
+{
+  "sections": {
+    "story": {
+      "type": "peach-editorial",
+      "settings": {
+        "background": "#fff7f7",
+        "padding_top": 58,
+        "padding_bottom": 66,
+        "text": "<p>Discover a world of beautifully illustrated journals, stationery, and home accessories. Every design in the <a href=\"/collections/lisa-monias\">Lisa Monias Collection</a> begins with original artwork, lovingly illustrated by hand and inspired by nature, creativity, and the beauty of everyday life. From paper goods to artful gifts, each piece is thoughtfully created to bring a little color, charm, and inspiration to your day.</p>",
+        "link": "/collections/lisa-monias"
+      },
+      "blocks": {
+        "calendar": {
+          "type": "image",
+          "settings": {
+            "original_image": "calendarsNaples.jpg",
+            "alt": "Naples illustrated calendar",
+            "link": "/collections/lisa-monias"
+          }
+        },
+        "towel": {
+          "type": "image",
+          "settings": {
+            "original_image": "NaplesTeaTowelPreview.jpg",
+            "alt": "Naples illustrated tea towel",
+            "link": "/collections/lisa-monias"
+          }
+        }
+      },
+      "block_order": [
+        "calendar",
+        "towel"
+      ]
+    },
+    "main": {
+      "type": "main-collection",
+      "settings": {}
+    }
+  },
+  "order": [
+    "story",
+    "main"
+  ]
+}

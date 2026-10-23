@@ -1,2 +1,77 @@
-<section class="content-section"><h1>{{ collection.title | escape }}</h1><div class="rte">{{ collection.description }}</div>{% paginate collection.products by 24 %}<div class="product-grid">{% for product in collection.products %}{% render 'product-card', product: product %}{% else %}<p>No products in this collection yet.</p>{% endfor %}</div>{{ paginate | default_pagination }}{% endpaginate %}</section>
-{% schema %}{"name":"Collection","settings":[]}{% endschema %}
+<div class="container collection-page" style="--product-columns: {{ section.settings.columns }}; --product-image-height: {{ section.settings.image_height }}px">
+<h1>{{ collection.title | escape }}</h1>{% if section.settings.show_description %}<div class="rte collection-description">{{ collection.description }}</div>{% endif %}
+<form method="get" action="{{ collection.url }}" class="collection-tools">
+{% if section.settings.show_filters %}{% for filter in collection.filters %}<details class="filter"><summary>{{ filter.label | escape }}{% if filter.active_values.size > 0 %} ({{ filter.active_values.size }}){% endif %}</summary><div>{% case filter.type %}{% when 'boolean', 'list' %}{% for value in filter.values %}<label><input type="checkbox" name="{{ value.param_name }}" value="{{ value.value | escape }}"{% if value.active %} checked{% endif %}{% if value.count == 0 and value.active == false %} disabled{% endif %}> {{ value.label | escape }} ({{ value.count }})</label>{% endfor %}{% when 'price_range' %}<label>{{ 'collection.min' | t }}<input type="number" name="{{ filter.min_value.param_name }}" min="0" placeholder="0"{% if filter.min_value.value %} value="{{ filter.min_value.value | divided_by: 100.0 }}"{% endif %}></label><label>{{ 'collection.max' | t }}<input type="number" name="{{ filter.max_value.param_name }}" min="0" placeholder="{{ filter.range_max | divided_by: 100.0 }}"{% if filter.max_value.value %} value="{{ filter.max_value.value | divided_by: 100.0 }}"{% endif %}></label>{% endcase %}</div></details>{% endfor %}{% endif %}
+{% if section.settings.show_sort %}<label for="Sort-{{ section.id }}">{{ 'collection.sort' | t }}</label><select name="sort_by" id="Sort-{{ section.id }}">{% assign current_sort = collection.sort_by | default: collection.default_sort_by %}{% for option in collection.sort_options %}<option value="{{ option.value }}"{% if option.value == current_sort %} selected{% endif %}>{{ option.name | escape }}</option>{% endfor %}</select>{% endif %}
+{% if section.settings.show_sort or section.settings.show_filters %}<button type="submit" class="button secondary">{{ 'collection.apply' | t }}</button><a href="{{ collection.url }}">{{ 'collection.clear' | t }}</a>{% endif %}
+</form>
+{% paginate collection.products by section.settings.per_page %}<div class="product-grid">{% for product in collection.products %}{% render 'product-card', product: product %}{% else %}<p class="empty-state">{{ 'collection.empty' | t }}</p>{% endfor %}</div>{% if paginate.pages > 1 %}<nav class="pagination" aria-label="{{ 'general.pagination' | t }}">{{ paginate | default_pagination }}</nav>{% endif %}{% endpaginate %}
+</div>
+
+{% schema %}
+{
+  "name": "Collection",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Desktop columns",
+      "options": [
+        {
+          "value": "2",
+          "label": "Two"
+        },
+        {
+          "value": "3",
+          "label": "Three"
+        },
+        {
+          "value": "4",
+          "label": "Four"
+        }
+      ],
+      "default": "4"
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "label": "Desktop image height",
+      "min": 200,
+      "max": 500,
+      "step": 5,
+      "default": 360,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "per_page",
+      "label": "Products per page",
+      "min": 8,
+      "max": 48,
+      "step": 4,
+      "default": 28,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "Show description",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sort",
+      "label": "Show sorting",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_filters",
+      "label": "Show available filters",
+      "default": true
+    }
+  ],
+  "class": "pi-section"
+}
+{% endschema %}

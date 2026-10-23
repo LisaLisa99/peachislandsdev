@@ -1,0 +1,10 @@
+<div class="container collection-page"><h1>{{ 'collection.all' | t }}</h1>{% paginate collections by 24 %}<div class="product-grid" style="--product-columns: 4">{% for collection in collections %}<article class="product-card"><a href="{{ collection.url }}">{% if collection.featured_image %}{{ collection.featured_image | image_url: width: 800 | image_tag: widths: '300, 500, 800', sizes: '(max-width: 749px) 50vw, 25vw', loading: 'lazy' }}{% endif %}<h2>{{ collection.title | escape }}</h2></a></article>{% endfor %}</div>{{ paginate | default_pagination }}{% endpaginate %}</div>
+
+{% schema %}
+{
+  "name": "Collections",
+  "tag": "section",
+  "settings": [],
+  "class": "pi-section"
+}
+{% endschema %}

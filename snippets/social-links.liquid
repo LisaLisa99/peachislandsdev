@@ -1,0 +1,5 @@
+<div class="social-links">
+{% if settings.social_facebook != blank %}<a href="{{ settings.social_facebook }}" aria-label="Facebook">{% render 'social-icon', name: 'facebook' %}</a>{% endif %}
+{% if settings.social_twitter != blank %}<a href="{{ settings.social_twitter }}" aria-label="X / Twitter">{% render 'social-icon', name: 'twitter' %}</a>{% endif %}
+{% if settings.social_instagram != blank %}<a href="{{ settings.social_instagram }}" aria-label="Instagram">{% render 'social-icon', name: 'instagram' %}</a>{% endif %}
+</div>

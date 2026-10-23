@@ -1,0 +1,10 @@
+<div class="container collection-page"><h1>{{ 'general.search' | t }}</h1><form action="{{ routes.search_url }}" method="get" role="search" class="search-form"><label for="Search-{{ section.id }}" class="visually-hidden">{{ 'general.search' | t }}</label><input id="Search-{{ section.id }}" name="q" type="search" value="{{ search.terms | escape }}"><button class="button" type="submit">{{ 'general.search' | t }}</button></form>{% if search.performed %}<p>{{ 'search.results' | t: count: search.results_count, terms: search.terms }}</p>{% paginate search.results by 24 %}<div class="product-grid" style="--product-columns: 4; --product-image-height: 360px">{% for result in search.results %}{% if result.object_type == 'product' %}{% render 'product-card', product: result %}{% else %}<article><h2><a href="{{ result.url }}">{{ result.title | escape }}</a></h2><p>{{ result.content | strip_html | truncatewords: 30 }}</p></article>{% endif %}{% endfor %}</div><nav class="pagination">{{ paginate | default_pagination }}</nav>{% endpaginate %}{% endif %}</div>
+
+{% schema %}
+{
+  "name": "Search",
+  "tag": "section",
+  "settings": [],
+  "class": "pi-section"
+}
+{% endschema %}

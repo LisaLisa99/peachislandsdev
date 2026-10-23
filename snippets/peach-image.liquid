@@ -1,0 +1,64 @@
+{%- if image != blank -%}
+  {{ image | image_url: width: 2400 | image_tag: widths: '320, 540, 720, 1000, 1440, 2000, 2400', sizes: sizes, loading: loading, alt: alt, class: image_class }}
+{%- elsif original != blank and original != 'none' -%}
+  {%- case original -%}
+  {%- when 'APG159b_360x.jpg.webp' -%}{%- assign original_width = 360 -%}{%- assign original_height = 360 -%}
+  {%- when 'BirthMonthFlowers.jpg' -%}{%- assign original_width = 1034 -%}{%- assign original_height = 1034 -%}
+  {%- when 'BloomWildlyDreamFreely.png' -%}{%- assign original_width = 1374 -%}{%- assign original_height = 1145 -%}
+  {%- when 'CoverMOckupExport.jpg' -%}{%- assign original_width = 1920 -%}{%- assign original_height = 1920 -%}
+  {%- when 'CoverMOckupExport10.jpg' -%}{%- assign original_width = 1920 -%}{%- assign original_height = 1920 -%}
+  {%- when 'CoverMOckupExport11.jpg' -%}{%- assign original_width = 1920 -%}{%- assign original_height = 1920 -%}
+  {%- when 'CoverMOckupExport12.jpg' -%}{%- assign original_width = 1920 -%}{%- assign original_height = 1920 -%}
+  {%- when 'CoverMOckupExport14.jpg' -%}{%- assign original_width = 1920 -%}{%- assign original_height = 1920 -%}
+  {%- when 'CoverMOckupExport15.jpg' -%}{%- assign original_width = 1920 -%}{%- assign original_height = 1920 -%}
+  {%- when 'CoverMOckupExport16.jpg' -%}{%- assign original_width = 1920 -%}{%- assign original_height = 1920 -%}
+  {%- when 'CoverMOckupExport17.jpg' -%}{%- assign original_width = 1920 -%}{%- assign original_height = 1920 -%}
+  {%- when 'CoverMOckupExport18.jpg' -%}{%- assign original_width = 1920 -%}{%- assign original_height = 1920 -%}
+  {%- when 'CoverMOckupExport2.jpg' -%}{%- assign original_width = 1920 -%}{%- assign original_height = 1920 -%}
+  {%- when 'CoverMOckupExport24.jpg' -%}{%- assign original_width = 1920 -%}{%- assign original_height = 1920 -%}
+  {%- when 'CoverMOckupExport25.jpg' -%}{%- assign original_width = 1920 -%}{%- assign original_height = 1920 -%}
+  {%- when 'CoverMOckupExport26.jpg' -%}{%- assign original_width = 1920 -%}{%- assign original_height = 1920 -%}
+  {%- when 'CoverMOckupExport3.jpg' -%}{%- assign original_width = 1920 -%}{%- assign original_height = 1920 -%}
+  {%- when 'CoverMOckupExport4.jpg' -%}{%- assign original_width = 1920 -%}{%- assign original_height = 1920 -%}
+  {%- when 'CoverMOckupExport5.jpg' -%}{%- assign original_width = 1920 -%}{%- assign original_height = 1920 -%}
+  {%- when 'CoverMOckupExport6.jpg' -%}{%- assign original_width = 1920 -%}{%- assign original_height = 1920 -%}
+  {%- when 'CoverMOckupExport7.jpg' -%}{%- assign original_width = 1920 -%}{%- assign original_height = 1920 -%}
+  {%- when 'CoverMOckupExport8.jpg' -%}{%- assign original_width = 1920 -%}{%- assign original_height = 1920 -%}
+  {%- when 'CoverMOckupExport9.jpg' -%}{%- assign original_width = 1920 -%}{%- assign original_height = 1920 -%}
+  {%- when 'DreamJournal.jpg' -%}{%- assign original_width = 1200 -%}{%- assign original_height = 1200 -%}
+  {%- when 'EN022-2_fbcb0ac0-a93e-47dd-b111-89b73e79a0b7_540x-1.jpg.webp' -%}{%- assign original_width = 540 -%}{%- assign original_height = 540 -%}
+  {%- when 'IMG_9979-2_540x.jpg.webp' -%}{%- assign original_width = 540 -%}{%- assign original_height = 540 -%}
+  {%- when 'LetterandEnvStacikercopy.jpg' -%}{%- assign original_width = 1169 -%}{%- assign original_height = 1175 -%}
+  {%- when 'NB03.webp' -%}{%- assign original_width = 1200 -%}{%- assign original_height = 1200 -%}
+  {%- when 'NB04.webp' -%}{%- assign original_width = 1200 -%}{%- assign original_height = 1200 -%}
+  {%- when 'NB09.webp' -%}{%- assign original_width = 1200 -%}{%- assign original_height = 1200 -%}
+  {%- when 'NJ05.webp' -%}{%- assign original_width = 1200 -%}{%- assign original_height = 1200 -%}
+  {%- when 'NaplesTeaTowelPreview.jpg' -%}{%- assign original_width = 300 -%}{%- assign original_height = 300 -%}
+  {%- when 'PEN01-2_300x.jpg.webp' -%}{%- assign original_width = 300 -%}{%- assign original_height = 300 -%}
+  {%- when 'PLA06-4_540x.jpg.webp' -%}{%- assign original_width = 540 -%}{%- assign original_height = 540 -%}
+  {%- when 'Pawsitive.jpg' -%}{%- assign original_width = 1200 -%}{%- assign original_height = 1200 -%}
+  {%- when 'PeachIsland_WildBoomJournal.jpg' -%}{%- assign original_width = 1200 -%}{%- assign original_height = 1200 -%}
+  {%- when 'PeachIsland_WildatheartJournal.jpg' -%}{%- assign original_width = 1200 -%}{%- assign original_height = 1200 -%}
+  {%- when 'PeachIsland_dreamBeyondJournal.jpg' -%}{%- assign original_width = 1200 -%}{%- assign original_height = 1200 -%}
+  {%- when 'PeachIsland_dreamfreelyjournal1.jpg' -%}{%- assign original_width = 1200 -%}{%- assign original_height = 1200 -%}
+  {%- when 'PeachIslands.png' -%}{%- assign original_width = 459 -%}{%- assign original_height = 52 -%}
+  {%- when 'Sample2.jpg' -%}{%- assign original_width = 852 -%}{%- assign original_height = 743 -%}
+  {%- when 'ScreenShot2026-05-09at10.42.08AM.png' -%}{%- assign original_width = 1193 -%}{%- assign original_height = 1166 -%}
+  {%- when 'TEA13-4_300x.jpg.webp' -%}{%- assign original_width = 300 -%}{%- assign original_height = 300 -%}
+  {%- when 'TP04-2_1950x.jpg' -%}{%- assign original_width = 1920 -%}{%- assign original_height = 1920 -%}
+  {%- when 'WP027-S-b_540x.jpg.webp' -%}{%- assign original_width = 540 -%}{%- assign original_height = 540 -%}
+  {%- when 'WeirdestDrem.jpg' -%}{%- assign original_width = 1200 -%}{%- assign original_height = 1200 -%}
+  {%- when 'WildBloomJournalinaCozyStillLife.png' -%}{%- assign original_width = 1374 -%}{%- assign original_height = 1145 -%}
+  {%- when 'WildBloomStraightView.jpg' -%}{%- assign original_width = 1200 -%}{%- assign original_height = 1200 -%}
+  {%- when 'WildBoomInsidePreview.png' -%}{%- assign original_width = 1353 -%}{%- assign original_height = 1162 -%}
+  {%- when 'WritingSetPreview2copy.jpg' -%}{%- assign original_width = 1169 -%}{%- assign original_height = 1175 -%}
+  {%- when 'WritingSetPreview3.jpg' -%}{%- assign original_width = 1169 -%}{%- assign original_height = 1175 -%}
+  {%- when 'calendarsNaples.jpg' -%}{%- assign original_width = 300 -%}{%- assign original_height = 300 -%}
+  {%- when 'default-image.jpg' -%}{%- assign original_width = 2000 -%}{%- assign original_height = 1333 -%}
+  {%- when 'dreamsthatspeak.jpg' -%}{%- assign original_width = 1200 -%}{%- assign original_height = 1200 -%}
+
+  {%- endcase -%}
+  <img src="{{ original | asset_url }}" width="{{ original_width }}" height="{{ original_height }}" alt="{{ alt | escape }}" loading="{{ loading | default: 'lazy' }}" class="{{ image_class | escape }}">
+{%- else -%}
+  {{ 'image' | placeholder_svg_tag: 'pi-placeholder' }}
+{%- endif -%}

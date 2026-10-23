@@ -1,0 +1,46 @@
+{
+  "type": "footer",
+  "name": "Footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "settings": {},
+      "blocks": {
+        "care": {
+          "type": "menu",
+          "settings": {
+            "heading": "Customer care",
+            "fallback": "care"
+          }
+        },
+        "about": {
+          "type": "menu",
+          "settings": {
+            "heading": "Find out more",
+            "fallback": "about"
+          }
+        },
+        "wholesale": {
+          "type": "menu",
+          "settings": {
+            "heading": "Wholesale",
+            "fallback": "wholesale"
+          }
+        },
+        "brand": {
+          "type": "text",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "care",
+        "about",
+        "wholesale",
+        "brand"
+      ]
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

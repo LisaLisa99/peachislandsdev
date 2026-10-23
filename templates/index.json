@@ -1,14 +1,249 @@
 {
   "sections": {
     "hero": {
-      "type": "hero"
+      "type": "peach-split-hero",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "blocks": {
+        "desk": {
+          "type": "panel",
+          "settings": {
+            "original_image": "EN022-2_fbcb0ac0-a93e-47dd-b111-89b73e79a0b7_540x-1.jpg.webp",
+            "alt": "Floral letter writing stationery",
+            "heading": "Desk & Stationary",
+            "link": "/collections/desk-stationary",
+            "position": "left"
+          }
+        },
+        "wrap": {
+          "type": "panel",
+          "settings": {
+            "original_image": "IMG_9979-2_540x.jpg.webp",
+            "alt": "Botanical wrapping paper",
+            "heading": "Wrapping Paper",
+            "link": "/collections/wrapping-paper",
+            "position": "center"
+          }
+        }
+      },
+      "block_order": [
+        "desk",
+        "wrap"
+      ]
     },
-    "featured": {
-      "type": "featured-collection"
+    "categories": {
+      "type": "peach-image-cards",
+      "settings": {
+        "columns": "4",
+        "image_height": 213,
+        "padding_top": 54,
+        "padding_bottom": 68,
+        "background": "#ffffff",
+        "gap": 32
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "original_image": "WP027-S-b_540x.jpg.webp",
+            "alt": "Wrapping Paper",
+            "heading": "Wrapping Paper",
+            "text": "<p>Beautiful papers designed to turn even the simplest gift into something unforgettable.</p>",
+            "link": "/collections/wrapping-paper"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "original_image": "PEN01-2_300x.jpg.webp",
+            "alt": "Journals & Notebooks",
+            "heading": "Journals & Notebooks",
+            "text": "<p>Thoughtfully designed pages for notes, ideas, dreams, lists, and everyday inspiration.</p>",
+            "link": "/collections/journals-notebooks"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "original_image": "BirthMonthFlowers.jpg",
+            "alt": "Cards & Notes",
+            "heading": "Cards & Notes",
+            "text": "<p>Small cards made for meaningful messages, thoughtful moments, and handwritten connection.</p>",
+            "link": "/collections/cards"
+          }
+        },
+        "card4": {
+          "type": "card",
+          "settings": {
+            "original_image": "EN022-2_fbcb0ac0-a93e-47dd-b111-89b73e79a0b7_540x-1.jpg.webp",
+            "alt": "Desk & Stationary",
+            "heading": "Desk & Stationary",
+            "text": "<p>Elegant paper goods and desk essentials created to bring beauty to everyday writing.</p>",
+            "link": "/collections/desk-stationary"
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3",
+        "card4"
+      ]
+    },
+    "story": {
+      "type": "peach-editorial",
+      "settings": {
+        "background": "#fff7f7",
+        "padding_top": 58,
+        "padding_bottom": 66,
+        "text": "<p>Discover a world of beautifully illustrated journals, stationery, and home accessories. Every design in the <a href=\"/collections/lisa-monias\">Lisa Monias Collection</a> begins with original artwork, lovingly illustrated by hand and inspired by nature, creativity, and the beauty of everyday life. From paper goods to artful gifts, each piece is thoughtfully created to bring a little color, charm, and inspiration to your day.</p>",
+        "link": "/collections/lisa-monias"
+      },
+      "blocks": {
+        "calendar": {
+          "type": "image",
+          "settings": {
+            "original_image": "calendarsNaples.jpg",
+            "alt": "Naples illustrated calendar",
+            "link": "/collections/lisa-monias"
+          }
+        },
+        "towel": {
+          "type": "image",
+          "settings": {
+            "original_image": "NaplesTeaTowelPreview.jpg",
+            "alt": "Naples illustrated tea towel",
+            "link": "/collections/lisa-monias"
+          }
+        }
+      },
+      "block_order": [
+        "calendar",
+        "towel"
+      ]
+    },
+    "discover": {
+      "type": "peach-image-cards",
+      "settings": {
+        "columns": "3",
+        "image_height": 294,
+        "padding_top": 40,
+        "padding_bottom": 68,
+        "background": "#ffffff",
+        "gap": 32,
+        "text_font": "secondary"
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "original_image": "TP04-2_1950x.jpg",
+            "alt": "Tissue & Gift Wraping",
+            "heading": "Tissue & Gift Wraping",
+            "text": "<p>Elegant wrapping papers and tissue designed to make every gift feel thoughtful and beautifully presented.</p>",
+            "link": "/collections/gift-wrap"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "original_image": "APG159b_360x.jpg.webp",
+            "alt": "Beautiful Walls",
+            "heading": "Beautiful Walls",
+            "text": "<p>Artful prints inspired by nature, color, and quiet moments to bring warmth and beauty into your space.</p>",
+            "link": "/collections/wall-art"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "original_image": "PLA06-4_540x.jpg.webp",
+            "alt": "Planners",
+            "heading": "Planners",
+            "text": "<p>Beautifully designed planners created to help organize your days while inspiring creativity along the way.</p>",
+            "link": "/collections/planner-calendars"
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3"
+      ]
+    },
+    "newsletter": {
+      "type": "peach-newsletter",
+      "settings": {
+        "background": "#fceae8",
+        "padding_top": 32,
+        "padding_bottom": 24
+      }
+    },
+    "more": {
+      "type": "peach-image-cards",
+      "settings": {
+        "columns": "3",
+        "image_height": 372,
+        "padding_top": 62,
+        "padding_bottom": 86,
+        "background": "#f6f3ee",
+        "gap": 32,
+        "text_font": "secondary"
+      },
+      "blocks": {
+        "card1": {
+          "type": "card",
+          "settings": {
+            "original_image": "TP04-2_1950x.jpg",
+            "alt": "Gift Labels",
+            "heading": "Gift Labels",
+            "text": "<p>Charming labels and tags designed to add the perfect finishing touch to thoughtful gifts and beautiful packaging.</p>",
+            "link": "/collections/gift-labels"
+          }
+        },
+        "card2": {
+          "type": "card",
+          "settings": {
+            "original_image": "APG159b_360x.jpg.webp",
+            "alt": "Dream Journals & Diaries",
+            "heading": "Dream Journals & Diaries",
+            "text": "<p>Guided journals and creative spaces made for capturing dreams, reflections, ideas, and everyday inspiration.</p>",
+            "link": "/collections/journals-notebooks"
+          }
+        },
+        "card3": {
+          "type": "card",
+          "settings": {
+            "original_image": "PLA06-4_540x.jpg.webp",
+            "alt": "Recipe Books",
+            "heading": "Recipe Books",
+            "text": "<p>Beautiful keepsake recipe books created for treasured family favorites, memories, and meals worth sharing.</p>",
+            "link": "/collections/recipe-books"
+          }
+        }
+      },
+      "block_order": [
+        "card1",
+        "card2",
+        "card3"
+      ]
+    },
+    "spacing": {
+      "type": "peach-spacer",
+      "settings": {
+        "height": 60
+      }
     }
   },
   "order": [
     "hero",
-    "featured"
+    "categories",
+    "story",
+    "discover",
+    "newsletter",
+    "more",
+    "spacing"
   ]
 }

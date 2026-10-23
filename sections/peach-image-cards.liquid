@@ -1,0 +1,447 @@
+<div class="section-surface image-cards" style="--section-bg: {{ section.settings.background }}; --section-ink: {{ section.settings.text_color }}; --pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px">
+<div class="container"><div class="image-card-grid" style="--columns: {{ section.settings.columns }}; --mobile-columns: {{ section.settings.mobile_columns }}; --gap: {{ section.settings.gap }}px; --image-height: {{ section.settings.image_height }}px; --image-fit: {{ section.settings.image_fit }}; --card-title-size: {{ section.settings.heading_size }}px; --card-text-size: {{ section.settings.text_size }}px; --card-text-font: {% if section.settings.text_font == 'secondary' %}var(--secondary-font){% else %}var(--body-font){% endif %}">
+{% for block in section.blocks %}<article class="image-card" {{ block.shopify_attributes }}>
+{% if block.settings.link != blank %}<a href="{{ block.settings.link }}">{% endif %}
+{% render 'peach-image', image: block.settings.image, original: block.settings.original_image, alt: block.settings.alt, loading: 'lazy', sizes: '(max-width: 575px) 100vw, (max-width: 991px) 50vw, 33vw' %}
+{% if block.settings.heading != blank %}<h2>{{ block.settings.heading | escape }}</h2>{% endif %}
+{% if block.settings.link != blank %}</a>{% endif %}
+<div class="rte">{{ block.settings.text }}</div>
+{% if block.settings.button_label != blank and block.settings.link != blank %}<a class="text-link" href="{{ block.settings.link }}">{{ block.settings.button_label | escape }}</a>{% endif %}
+</article>{% endfor %}
+</div></div></div>
+
+{% schema %}
+{
+  "name": "Image and text columns",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Desktop columns",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "select",
+      "id": "mobile_columns",
+      "label": "Mobile columns",
+      "options": [
+        {
+          "value": "1",
+          "label": "One"
+        },
+        {
+          "value": "2",
+          "label": "Two"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Column gap",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "label": "Desktop image height",
+      "min": 120,
+      "max": 420,
+      "step": 3,
+      "default": 294,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Image fit",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Fill frame"
+        },
+        {
+          "value": "contain",
+          "label": "Show full image"
+        }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 20,
+      "max": 48,
+      "step": 1,
+      "default": 29,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "text_font",
+      "label": "Text typography",
+      "options": [
+        {
+          "value": "body",
+          "label": "Body font"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary card font"
+        }
+      ],
+      "default": "body"
+    }
+  ],
+  "class": "pi-section",
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Image card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "select",
+          "id": "original_image",
+          "label": "Included original image",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "APG159b_360x.jpg.webp",
+              "label": "APG159b_360x"
+            },
+            {
+              "value": "BirthMonthFlowers.jpg",
+              "label": "BirthMonthFlowers"
+            },
+            {
+              "value": "BloomWildlyDreamFreely.png",
+              "label": "BloomWildlyDreamFreely"
+            },
+            {
+              "value": "CoverMOckupExport.jpg",
+              "label": "CoverMOckupExport"
+            },
+            {
+              "value": "CoverMOckupExport10.jpg",
+              "label": "CoverMOckupExport10"
+            },
+            {
+              "value": "CoverMOckupExport11.jpg",
+              "label": "CoverMOckupExport11"
+            },
+            {
+              "value": "CoverMOckupExport12.jpg",
+              "label": "CoverMOckupExport12"
+            },
+            {
+              "value": "CoverMOckupExport14.jpg",
+              "label": "CoverMOckupExport14"
+            },
+            {
+              "value": "CoverMOckupExport15.jpg",
+              "label": "CoverMOckupExport15"
+            },
+            {
+              "value": "CoverMOckupExport16.jpg",
+              "label": "CoverMOckupExport16"
+            },
+            {
+              "value": "CoverMOckupExport17.jpg",
+              "label": "CoverMOckupExport17"
+            },
+            {
+              "value": "CoverMOckupExport18.jpg",
+              "label": "CoverMOckupExport18"
+            },
+            {
+              "value": "CoverMOckupExport2.jpg",
+              "label": "CoverMOckupExport2"
+            },
+            {
+              "value": "CoverMOckupExport24.jpg",
+              "label": "CoverMOckupExport24"
+            },
+            {
+              "value": "CoverMOckupExport25.jpg",
+              "label": "CoverMOckupExport25"
+            },
+            {
+              "value": "CoverMOckupExport26.jpg",
+              "label": "CoverMOckupExport26"
+            },
+            {
+              "value": "CoverMOckupExport3.jpg",
+              "label": "CoverMOckupExport3"
+            },
+            {
+              "value": "CoverMOckupExport4.jpg",
+              "label": "CoverMOckupExport4"
+            },
+            {
+              "value": "CoverMOckupExport5.jpg",
+              "label": "CoverMOckupExport5"
+            },
+            {
+              "value": "CoverMOckupExport6.jpg",
+              "label": "CoverMOckupExport6"
+            },
+            {
+              "value": "CoverMOckupExport7.jpg",
+              "label": "CoverMOckupExport7"
+            },
+            {
+              "value": "CoverMOckupExport8.jpg",
+              "label": "CoverMOckupExport8"
+            },
+            {
+              "value": "CoverMOckupExport9.jpg",
+              "label": "CoverMOckupExport9"
+            },
+            {
+              "value": "DreamJournal.jpg",
+              "label": "DreamJournal"
+            },
+            {
+              "value": "EN022-2_fbcb0ac0-a93e-47dd-b111-89b73e79a0b7_540x-1.jpg.webp",
+              "label": "EN022-2_fbcb0ac0-a93e-47dd-b111-89b73e79a0b7_"
+            },
+            {
+              "value": "IMG_9979-2_540x.jpg.webp",
+              "label": "IMG_9979-2_540x"
+            },
+            {
+              "value": "LetterandEnvStacikercopy.jpg",
+              "label": "LetterandEnvStacikercopy"
+            },
+            {
+              "value": "NB03.webp",
+              "label": "NB03"
+            },
+            {
+              "value": "NB04.webp",
+              "label": "NB04"
+            },
+            {
+              "value": "NB09.webp",
+              "label": "NB09"
+            },
+            {
+              "value": "NJ05.webp",
+              "label": "NJ05"
+            },
+            {
+              "value": "NaplesTeaTowelPreview.jpg",
+              "label": "NaplesTeaTowelPreview"
+            },
+            {
+              "value": "PEN01-2_300x.jpg.webp",
+              "label": "PEN01-2_300x"
+            },
+            {
+              "value": "PLA06-4_540x.jpg.webp",
+              "label": "PLA06-4_540x"
+            },
+            {
+              "value": "Pawsitive.jpg",
+              "label": "Pawsitive"
+            },
+            {
+              "value": "PeachIsland_WildBoomJournal.jpg",
+              "label": "PeachIsland_WildBoomJournal"
+            },
+            {
+              "value": "PeachIsland_WildatheartJournal.jpg",
+              "label": "PeachIsland_WildatheartJournal"
+            },
+            {
+              "value": "PeachIsland_dreamBeyondJournal.jpg",
+              "label": "PeachIsland_dreamBeyondJournal"
+            },
+            {
+              "value": "PeachIsland_dreamfreelyjournal1.jpg",
+              "label": "PeachIsland_dreamfreelyjournal1"
+            },
+            {
+              "value": "PeachIslands.png",
+              "label": "PeachIslands"
+            },
+            {
+              "value": "Sample2.jpg",
+              "label": "Sample2"
+            },
+            {
+              "value": "ScreenShot2026-05-09at10.42.08AM.png",
+              "label": "ScreenShot2026-05-09at10"
+            },
+            {
+              "value": "TEA13-4_300x.jpg.webp",
+              "label": "TEA13-4_300x"
+            },
+            {
+              "value": "TP04-2_1950x.jpg",
+              "label": "TP04-2_1950x"
+            },
+            {
+              "value": "WP027-S-b_540x.jpg.webp",
+              "label": "WP027-S-b_540x"
+            },
+            {
+              "value": "WeirdestDrem.jpg",
+              "label": "WeirdestDrem"
+            },
+            {
+              "value": "WildBloomJournalinaCozyStillLife.png",
+              "label": "WildBloomJournalinaCozyStillLife"
+            },
+            {
+              "value": "WildBloomStraightView.jpg",
+              "label": "WildBloomStraightView"
+            },
+            {
+              "value": "WildBoomInsidePreview.png",
+              "label": "WildBoomInsidePreview"
+            },
+            {
+              "value": "WritingSetPreview2copy.jpg",
+              "label": "WritingSetPreview2copy"
+            },
+            {
+              "value": "WritingSetPreview3.jpg",
+              "label": "WritingSetPreview3"
+            },
+            {
+              "value": "calendarsNaples.jpg",
+              "label": "calendarsNaples"
+            },
+            {
+              "value": "dreamsthatspeak.jpg",
+              "label": "dreamsthatspeak"
+            }
+          ],
+          "default": "WP027-S-b_540x.jpg.webp"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Image description",
+          "default": "Peach Islands artwork"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Wrapping Paper"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Beautiful papers designed to turn even the simplest gift into something unforgettable.</p>"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Optional link label"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Image and text columns",
+      "blocks": [
+        {
+          "type": "card"
+        },
+        {
+          "type": "card"
+        },
+        {
+          "type": "card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

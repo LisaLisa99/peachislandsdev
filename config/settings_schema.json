@@ -2,9 +2,108 @@
   {
     "name": "theme_info",
     "theme_name": "Peach Islands",
-    "theme_version": "0.1.0",
+    "theme_version": "1.0.0",
     "theme_author": "Peach Islands",
     "theme_documentation_url": "https://shopify.dev/docs/storefronts/themes",
     "theme_support_url": "https://help.shopify.com/"
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "heading_font",
+        "label": "Headings",
+        "default": "cormorant_garamond_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "body_font",
+        "label": "Body text",
+        "default": "montserrat_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "nav_font",
+        "label": "Navigation",
+        "default": "montserrat_n5"
+      },
+      {
+        "type": "font_picker",
+        "id": "secondary_font",
+        "label": "Secondary card text",
+        "default": "open_sans_n4"
+      }
+    ]
+  },
+  {
+    "name": "Colors and layout",
+    "settings": [
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text",
+        "default": "#111111"
+      },
+      {
+        "type": "color",
+        "id": "button_color",
+        "label": "Buttons",
+        "default": "#317657"
+      },
+      {
+        "type": "color",
+        "id": "blush_color",
+        "label": "Blush",
+        "default": "#fceae8"
+      },
+      {
+        "type": "color",
+        "id": "cream_color",
+        "label": "Cream",
+        "default": "#faf7f2"
+      },
+      {
+        "type": "color",
+        "id": "accent_color",
+        "label": "Rose accent",
+        "default": "#a95459"
+      },
+      {
+        "type": "range",
+        "id": "page_width",
+        "label": "Content width",
+        "min": 1000,
+        "max": 1600,
+        "step": 20,
+        "default": 1400,
+        "unit": "px"
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      }
+    ]
+  },
+  {
+    "name": "Social links",
+    "settings": [
+      {
+        "type": "url",
+        "id": "social_facebook",
+        "label": "Facebook"
+      },
+      {
+        "type": "url",
+        "id": "social_twitter",
+        "label": "X / Twitter"
+      },
+      {
+        "type": "url",
+        "id": "social_instagram",
+        "label": "Instagram"
+      }
+    ]
   }
 ]
