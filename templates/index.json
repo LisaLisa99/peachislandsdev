@@ -131,78 +131,6 @@
         "text_font": "body"
       }
     },
-    "peach_image_cards_zBmfXk": {
-      "type": "peach-image-cards",
-      "blocks": {
-        "card_LpyH6a": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/WrappingPapercopy.jpg",
-            "original_image": "image_45",
-            "alt": "Wrapping Paper",
-            "heading": "Wrapping Paper",
-            "text": "<p>Beautiful papers designed to turn even the simplest gift into something unforgettable.</p>",
-            "link": "/collections/wrapping-paper",
-            "button_label": ""
-          }
-        },
-        "card_fJe6fb": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/JournalsNotebooks.png",
-            "original_image": "image_33",
-            "alt": "Journals & Notebooks",
-            "heading": "Journals & Notebooks",
-            "text": "<p>Thoughtfully designed pages for notes, ideas, dreams, lists, and everyday inspiration.</p>",
-            "link": "/collections/journals-notebooks",
-            "button_label": ""
-          }
-        },
-        "card_ThYRVN": {
-          "type": "card",
-          "settings": {
-            "original_image": "image_02",
-            "alt": "Cards & Notes",
-            "heading": "Cards & Notes",
-            "text": "<p>Small cards made for meaningful messages, thoughtful moments, and handwritten connection.</p>",
-            "link": "/collections/cards",
-            "button_label": ""
-          }
-        },
-        "card_CxwK3U": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/Cardsandnotes.png",
-            "original_image": "image_25",
-            "alt": "Desk & Stationary",
-            "heading": "Desk & Stationary",
-            "text": "<p>Elegant paper goods and desk essentials created to bring beauty to everyday writing.</p>",
-            "link": "/collections/desk-stationary",
-            "button_label": ""
-          }
-        }
-      },
-      "block_order": [
-        "card_LpyH6a",
-        "card_fJe6fb",
-        "card_ThYRVN",
-        "card_CxwK3U"
-      ],
-      "settings": {
-        "background": "#ffffff",
-        "text_color": "#111111",
-        "padding_top": 54,
-        "padding_bottom": 68,
-        "columns": "4",
-        "mobile_columns": "1",
-        "gap": 32,
-        "image_height": 213,
-        "image_fit": "cover",
-        "heading_size": 29,
-        "text_size": 16,
-        "text_font": "body"
-      }
-    },
     "story": {
       "type": "peach-editorial",
       "blocks": {
@@ -381,6 +309,78 @@
       "settings": {
         "height": 60,
         "background": "#ffffff"
+      }
+    },
+    "peach_image_cards_zBmfXk": {
+      "type": "peach-image-cards",
+      "blocks": {
+        "card_LpyH6a": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/WrappingPapercopy.jpg",
+            "original_image": "image_45",
+            "alt": "Wrapping Paper",
+            "heading": "Wrapping Paper",
+            "text": "<p>Beautiful papers designed to turn even the simplest gift into something unforgettable.</p>",
+            "link": "/collections/wrapping-paper",
+            "button_label": ""
+          }
+        },
+        "card_fJe6fb": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/JournalsNotebooks.png",
+            "original_image": "image_33",
+            "alt": "Journals & Notebooks",
+            "heading": "Journals & Notebooks",
+            "text": "<p>Thoughtfully designed pages for notes, ideas, dreams, lists, and everyday inspiration.</p>",
+            "link": "/collections/journals-notebooks",
+            "button_label": ""
+          }
+        },
+        "card_ThYRVN": {
+          "type": "card",
+          "settings": {
+            "original_image": "image_02",
+            "alt": "Cards & Notes",
+            "heading": "Cards & Notes",
+            "text": "<p>Small cards made for meaningful messages, thoughtful moments, and handwritten connection.</p>",
+            "link": "/collections/cards",
+            "button_label": ""
+          }
+        },
+        "card_CxwK3U": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Cardsandnotes.png",
+            "original_image": "image_25",
+            "alt": "Desk & Stationary",
+            "heading": "Desk & Stationary",
+            "text": "<p>Elegant paper goods and desk essentials created to bring beauty to everyday writing.</p>",
+            "link": "/collections/desk-stationary",
+            "button_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_LpyH6a",
+        "card_fJe6fb",
+        "card_ThYRVN",
+        "card_CxwK3U"
+      ],
+      "settings": {
+        "background": "#ffffff",
+        "text_color": "#111111",
+        "padding_top": 54,
+        "padding_bottom": 68,
+        "columns": "4",
+        "mobile_columns": "1",
+        "gap": 32,
+        "image_height": 213,
+        "image_fit": "cover",
+        "heading_size": 29,
+        "text_size": 16,
+        "text_font": "body"
       }
     },
     "1792777068b5fd0815": {
