@@ -1,0 +1,2 @@
+<section class="content-section"><h1>{{ collection.title | escape }}</h1><div class="rte">{{ collection.description }}</div>{% paginate collection.products by 24 %}<div class="product-grid">{% for product in collection.products %}{% render 'product-card', product: product %}{% else %}<p>No products in this collection yet.</p>{% endfor %}</div>{{ paginate | default_pagination }}{% endpaginate %}</section>
+{% schema %}{"name":"Collection","settings":[]}{% endschema %}

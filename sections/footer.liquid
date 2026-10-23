@@ -1,0 +1,2 @@
+<footer class="site-footer"><p class="eyebrow">{{ shop.name | escape }}</p><p>{{ section.settings.message | escape }}</p><small>&copy; {{ 'now' | date: '%Y' }} {{ shop.name | escape }}</small></footer>
+{% schema %}{"name":"Footer","settings":[{"type":"text","id":"message","label":"Message","default":"A little island state of mind."}]}{% endschema %}
