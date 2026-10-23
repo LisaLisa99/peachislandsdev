@@ -564,15 +564,16 @@
         "card_Te8Kb7": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/letterhead1Place1.jpg",
             "original_image": "image_34",
-            "alt": "Peach Islands artwork",
-            "heading": "Column 5",
-            "text": "<p>Share a little inspiration from Peach Islands.</p>",
+            "alt": "Butterfly Garden",
+            "heading": "Butterfly Garden",
+            "text": "<p>Butterfly Garden letter writing set, inspired to make treasured notes.</p>",
             "link": "",
             "button_label": "",
             "image_width": 100,
             "alignment": "inherit",
-            "price": "",
+            "price": "$14.99",
             "price_product": ""
           }
         }
