@@ -1,0 +1,7 @@
+{%- comment -%}Old export home links must use the locale-aware Shopify root, never Home.html.{%- endcomment -%}
+{%- assign navigation_path = link.url | split: '?' | first | split: '#' | first -%}
+{%- if link.type == 'frontpage_link' or navigation_path == '/' or navigation_path == '/Home.html' or navigation_path == 'Home.html' or navigation_path == '/index.html' or navigation_path == 'index.html' -%}
+  {{- routes.root_url -}}
+{%- else -%}
+  {{- link.url -}}
+{%- endif -%}

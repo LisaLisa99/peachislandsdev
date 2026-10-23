@@ -1,0 +1,136 @@
+{
+  "original": [
+    {
+      "selector": "header",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 168,
+      "font": "Montserrat, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "tracking": "normal",
+      "lineHeight": "25.6px",
+      "padding": "0px"
+    },
+    {
+      "selector": ".u-header .u-nav-1 > li:first-child > a",
+      "x": 71.328125,
+      "y": 133,
+      "width": 76.9375,
+      "height": 35,
+      "font": "Montserrat, sans-serif",
+      "size": "15px",
+      "weight": "500",
+      "tracking": "2px",
+      "lineHeight": "15px",
+      "padding": "10px 12px"
+    },
+    {
+      "selector": ".u-header .u-image-1",
+      "x": 490.5,
+      "y": 67,
+      "width": 459,
+      "height": 52,
+      "font": "Montserrat, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "tracking": "normal",
+      "lineHeight": "25.6px",
+      "padding": "0px"
+    },
+    {
+      "selector": ".u-header .u-nav-1",
+      "x": 71.328125,
+      "y": 133,
+      "width": 1297.328125,
+      "height": 35,
+      "font": "Montserrat, sans-serif",
+      "size": "15px",
+      "weight": "500",
+      "tracking": "2px",
+      "lineHeight": "15px",
+      "padding": "0px"
+    },
+    {
+      "selector": ".u-section-row-1",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 41,
+      "font": "Montserrat, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "tracking": "normal",
+      "lineHeight": "25.6px",
+      "padding": "0px"
+    }
+  ],
+  "converted": [
+    {
+      "selector": "header",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 168.109375,
+      "font": "Montserrat, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "tracking": "normal",
+      "lineHeight": "25.6px",
+      "padding": "0px"
+    },
+    {
+      "selector": ".desktop-nav > ul > li:first-child > a",
+      "x": 71.328125,
+      "y": 133.109375,
+      "width": 76.9375,
+      "height": 35,
+      "font": "\"Peach Islands Montserrat\", sans-serif",
+      "size": "15px",
+      "weight": "500",
+      "tracking": "2px",
+      "lineHeight": "15px",
+      "padding": "10px 12px"
+    },
+    {
+      "selector": ".brand",
+      "x": 490,
+      "y": 67,
+      "width": 460,
+      "height": 52.109375,
+      "font": "Montserrat, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "tracking": "normal",
+      "lineHeight": "25.6px",
+      "padding": "0px"
+    },
+    {
+      "selector": ".desktop-nav > ul",
+      "x": 20,
+      "y": 133.109375,
+      "width": 1400,
+      "height": 35,
+      "font": "Montserrat, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "tracking": "normal",
+      "lineHeight": "25.6px",
+      "padding": "0px"
+    },
+    {
+      "selector": ".utility-bar",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 41,
+      "font": "\"Peach Islands Montserrat\", sans-serif",
+      "size": "15px",
+      "weight": "500",
+      "tracking": "normal",
+      "lineHeight": "24px",
+      "padding": "0px"
+    }
+  ]
+}

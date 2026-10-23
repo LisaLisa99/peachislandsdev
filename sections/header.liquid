@@ -1,4 +1,4 @@
-<header class="site-header" style="--logo-width: {{ section.settings.logo_width }}px; --mobile-logo-width: {{ section.settings.mobile_logo_width }}px; --logo-space: {{ section.settings.logo_spacing }}px; --bar-bg: {{ section.settings.bar_background }}">
+<header class="site-header" style="--logo-width: {{ section.settings.logo_width }}px; --mobile-logo-width: {{ section.settings.mobile_logo_width }}px; --logo-space: {{ section.settings.logo_spacing }}px; --bar-bg: {{ section.settings.bar_background }}; --header-font: {% if section.settings.use_original_typography %}'Peach Islands Montserrat', sans-serif{% else %}var(--nav-font, 'Peach Islands Montserrat', sans-serif){% endif %}">
 {% if section.settings.show_bar %}
   <div class="utility-bar"><div class="container utility-inner">
     {% render 'social-links' %}
@@ -30,6 +30,13 @@
   "name": "Header",
   "tag": "section",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "use_original_typography",
+      "label": "Use original header typography",
+      "default": true,
+      "info": "Use the included Montserrat font from the HTML design. Turn off to use the Navigation font in Theme settings."
+    },
     {
       "type": "image_picker",
       "id": "logo",

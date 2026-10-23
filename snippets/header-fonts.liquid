@@ -1,0 +1,5 @@
+  {{ 'montserrat-latin-500-normal.woff2' | asset_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }}
+  {% style %}
+    @font-face { font-family: 'Peach Islands Montserrat'; font-style: normal; font-weight: 400; font-display: swap; src: url('{{ 'montserrat-latin-400-normal.woff2' | asset_url }}') format('woff2'); }
+    @font-face { font-family: 'Peach Islands Montserrat'; font-style: normal; font-weight: 500; font-display: swap; src: url('{{ 'montserrat-latin-500-normal.woff2' | asset_url }}') format('woff2'); }
+  {% endstyle %}

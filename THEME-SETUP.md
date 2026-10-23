@@ -51,3 +51,23 @@ python3 tests/validate_theme.py
 ```
 
 For browser fixtures and their limitations, see [validation](docs/VALIDATION.md). Do not run `theme push`, `theme dev`, or publish against the store until the desired upload is authorized; GitHub connection above is the user-controlled preview path.
+
+## If Home page still shows 404 after sync
+
+Confirm this unpublished theme is connected to `peach-islands-html-conversion`, then check the theme's GitHub sync status for rejected files, especially `templates/index.json` and its `peach-*` sections. Reopen **Customize** from that theme's card and choose **Home page**. The logo and legacy export home-menu links now use Shopify's locale-aware root; do not use `/Home.html` or `/index.html` as the preview path.
+
+A 404 template has deliberately not been replaced with homepage content or given a redirect. If the root preview still fails, share the theme preview URL (including `preview_theme_id`) and any sync error text, without admin credentials or passwords. Source validation alone cannot confirm Shopify's import or editor state.
+
+The Header setting **Use original header typography** defaults on and uses the bundled original-family Montserrat font at the source sizes and spacing. Turn it off only if you intentionally want the global Navigation font picker instead. Existing logo width and spacing controls remain editable.
+
+## Exact error: missing `layout/theme.liquid` or `config/settings_schema.json`
+
+Both files, and `templates/index.json`, are committed directly at the repository root on `peach-islands-html-conversion`. They were already present in the first conversion commit (`13bd802`). The 1.0.1 update changes all three entry files together. There is no enclosing `peachislands/` directory to select or extract.
+
+Check the GitHub connection on **the unpublished theme with ID `190649237809`**. Confirm repository **LisaLisa99/peachislandsdev**, branch **peach-islands-html-conversion**, and a successful sync of the latest correction commit. A successful Git push does not itself prove that Shopify imported the files. If the connection names `main`, it points to the README-only branch and will not contain a Shopify theme. If the connection is correct, inspect its latest error/logs for file validation or authorization failures.
+
+Once sync succeeds, reopen this unpublished theme's editor from its theme-library card and select Home page. Its root preview is `https://peach-islands-dev.myshopify.com/?preview_theme_id=190649237809`. Keep the preview parameter when opening directly. The route should render the index template, not 404.
+
+If the current connection remains incomplete, use **Add theme → Connect from GitHub** to add this exact branch as another separate unpublished theme. Alternatively use **Add theme → Upload ZIP file** with the CLI-packaged 1.0.1 ZIP. Neither action requires publishing or replacing Horizon; a newly added theme will have a different preview theme ID. Do not upload a GitHub “Download ZIP” archive, which includes an enclosing repository directory.
+
+The cloud environment can verify remote Git files and package contents but cannot inspect your Shopify admin integration or confirm hosted preview behavior. If sync still fails, provide its exact error text.

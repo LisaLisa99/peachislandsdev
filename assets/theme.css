@@ -175,13 +175,14 @@ textarea:focus-visible {
 .utility-bar {
   background: var(--bar-bg, #fceae8);
   color: var(--rose, #a95459);
-  font-family: var(--nav-font, Montserrat, sans-serif);
+  font-family: var(--header-font, "Peach Islands Montserrat", sans-serif);
   font-size: 15px;
+  font-weight: 500;
 }
 .utility-inner {
-  min-height: 40px;
+  min-height: 41px;
   display: grid;
-  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
   gap: 12px;
 }
@@ -213,7 +214,8 @@ textarea:focus-visible {
   align-items: center;
   gap: 18px;
   white-space: nowrap;
-  font-size: 14px;
+  font-size: 15px;
+  text-transform: uppercase;
 }
 .utility-actions form {
   margin: 0;
@@ -222,15 +224,16 @@ textarea:focus-visible {
   background: transparent;
   border: 0;
   color: inherit;
-  font-size: 13px;
+  font-size: 15px;
+  font-weight: 500;
   max-width: 180px;
 }
 .cart-icon {
   position: relative;
   display: inline-flex;
-  width: 25px;
-  height: 25px;
-  margin-right: 10px;
+  width: 22px;
+  height: 22px;
+  margin-right: 16px;
 }
 .cart-count {
   position: absolute;
@@ -265,26 +268,34 @@ textarea:focus-visible {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   list-style: none;
-  gap: 8px 24px;
+  gap: 0;
   margin: 14px 0 0;
-  padding: 0 0 14px;
+  padding: 0;
 }
 .desktop-nav a,
 .desktop-nav summary {
-  font-family: var(--nav-font, Montserrat, sans-serif);
+  font-family: var(--header-font, "Peach Islands Montserrat", sans-serif);
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 15px;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1;
   display: block;
 }
-.desktop-nav a[aria-current],
+.desktop-nav > ul > li > a,
+.desktop-nav > ul > li > details > summary {
+  padding: 10px 12px;
+  white-space: nowrap;
+}
+.desktop-nav a[aria-current] {
+  color: #9a1c29;
+}
 .desktop-nav a:hover,
 .desktop-nav summary:hover {
-  color: #9a1c29;
+  color: #33830b;
+  text-decoration: none;
 }
 .nav-dropdown {
   position: relative;
@@ -296,9 +307,7 @@ textarea:focus-visible {
   display: none;
 }
 .nav-dropdown > summary::after {
-  content: "⌄";
-  font-size: 11px;
-  margin-left: 5px;
+  content: none;
 }
 .nav-dropdown > ul {
   position: absolute;
@@ -887,14 +896,6 @@ textarea:focus-visible {
   .country-label {
     display: none;
   }
-  .desktop-nav > ul {
-    gap: 8px 18px;
-  }
-  .desktop-nav a,
-  .desktop-nav summary {
-    font-size: 12px;
-    letter-spacing: 1px;
-  }
   .editorial-copy h2 {
     font-size: 38px;
   }
@@ -1274,4 +1275,57 @@ textarea:focus-visible {
 /* Match the source split hero’s narrower right-hand title. */
 .hero-panel[style*="--hero-position: center"] .hero-content h2 {
   max-width: 320px;
+}
+
+/* The export uses a 127px logo/navigation row beneath its 40px utility bar. */
+.site-header {
+  background: #fff;
+}
+.site-header .desktop-nav {
+  display: flow-root;
+  min-height: 49px;
+}
+.site-header .utility-inner {
+  position: relative;
+}
+.site-header .utility-actions {
+  justify-self: end;
+}
+.site-header .country-label {
+  text-transform: none;
+}
+@media (max-width: 1337px) {
+  .site-header .desktop-nav {
+    display: none;
+  }
+  .site-header .mobile-nav {
+    display: block;
+    padding: 14px 0;
+    font-family: var(--header-font);
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+  .site-header .mobile-nav > summary {
+    text-align: center;
+    list-style: none;
+    text-transform: uppercase;
+  }
+  .site-header .mobile-nav > summary::after {
+    content: " +";
+  }
+  .site-header .mobile-nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  .site-header .mobile-nav a,
+  .site-header .mobile-nav .nav-dropdown summary {
+    display: block;
+    padding: 10px 12px;
+  }
+  .site-header .mobile-nav .nav-dropdown > ul {
+    position: static;
+    margin: 0;
+    padding: 0 20px;
+    box-shadow: none;
+  }
 }

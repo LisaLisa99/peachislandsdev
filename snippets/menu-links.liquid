@@ -1,7 +1,7 @@
 {% for link in menu.links %}
 <li>
-  {% if link.links != blank %}<details class="nav-dropdown"><summary>{{ link.title | escape }}</summary><ul><li><a href="{{ link.url }}">{{ 'general.view_all' | t }} {{ link.title | escape }}</a></li>{% for child in link.links %}<li><a href="{{ child.url }}"{% if child.current %} aria-current="page"{% endif %}>{{ child.title | escape }}</a>{% if child.links != blank %}<ul>{% for grandchild in child.links %}<li><a href="{{ grandchild.url }}">{{ grandchild.title | escape }}</a></li>{% endfor %}</ul>{% endif %}</li>{% endfor %}</ul></details>
-  {% else %}<a href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title | escape }}</a>{% endif %}
+  {% if link.links != blank %}<details class="nav-dropdown"><summary>{{ link.title | escape }}</summary><ul><li><a href="{% render 'navigation-url', link: link %}">{{ 'general.view_all' | t }} {{ link.title | escape }}</a></li>{% for child in link.links %}<li><a href="{% render 'navigation-url', link: child %}"{% if child.current %} aria-current="page"{% endif %}>{{ child.title | escape }}</a>{% if child.links != blank %}<ul>{% for grandchild in child.links %}<li><a href="{% render 'navigation-url', link: grandchild %}">{{ grandchild.title | escape }}</a></li>{% endfor %}</ul>{% endif %}</li>{% endfor %}</ul></details>
+  {% else %}<a href="{% render 'navigation-url', link: link %}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title | escape }}</a>{% endif %}
 </li>
-{% else %}<li><a href="{{ routes.all_products_collection_url }}">{{ 'general.shop' | t }}</a></li>
+{% else %}<li><a href="{{ routes.root_url }}">{{ 'general.shop' | t }}</a></li>
 {% endfor %}

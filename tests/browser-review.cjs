@@ -54,7 +54,79 @@ const server = http.createServer((req, res) => {
     console.log(`PASS ${label}`);
   }
   try {
-    for (const width of [1440, 1024, 768, 390]) {
+    const routingCases = JSON.parse(fs.readFileSync(root + "/routing.json"));
+    for (const entry of routingCases) {
+      const isHome = [
+        "/",
+        "/Home.html",
+        "Home.html",
+        "/index.html",
+        "index.html",
+      ].includes(entry.url.split("?")[0]);
+      assert.equal(entry.actual, isHome ? entry.root : entry.url);
+    }
+    pass(
+      "Legacy homepage links use the locale-aware root; unrelated and external links are preserved",
+    );
+    await page.goto(`${base}/index.html`);
+    assert.equal(await page.locator(".hero-grid").count(), 1);
+    assert.equal(
+      await page
+        .locator(".desktop-nav > ul > li:first-child > a")
+        .getAttribute("href"),
+      "/",
+    );
+    assert.equal(await page.locator(".brand").getAttribute("href"), "/");
+    await page.goto(`${base}/404.html`);
+    assert.equal(await page.locator(".hero-grid").count(), 0);
+    assert.match(
+      await page.locator("main").textContent(),
+      /A little off the island/,
+    );
+    pass(
+      "Home template renders homepage sections; genuine 404 retains the not-found page",
+    );
+    await page.goto(`${base}/index.html`);
+    await page.evaluate(() => document.fonts.ready);
+    const header = await page.evaluate(() => {
+      const e = document.querySelector(
+        ".desktop-nav > ul > li:first-child > a",
+      );
+      const c = getComputedStyle(e);
+      const logo = document.querySelector(".brand").getBoundingClientRect();
+      return {
+        size: c.fontSize,
+        weight: c.fontWeight,
+        tracking: c.letterSpacing,
+        line: c.lineHeight,
+        padding: c.padding,
+        fontLoaded: document.fonts.check('500 15px "Peach Islands Montserrat"'),
+        headerHeight: document.querySelector("header").getBoundingClientRect()
+          .height,
+        logoWidth: logo.width,
+        logoCenter: logo.x + logo.width / 2,
+        navX: e.getBoundingClientRect().x,
+      };
+    });
+    assert.deepEqual(
+      [
+        header.size,
+        header.weight,
+        header.tracking,
+        header.line,
+        header.padding,
+      ],
+      ["15px", "500", "2px", "15px", "10px 12px"],
+    );
+    assert.equal(header.fontLoaded, true);
+    assert.ok(Math.abs(header.headerHeight - 168) < 1);
+    assert.ok(Math.abs(header.logoWidth - 459) <= 1);
+    assert.equal(header.logoCenter, 720);
+    assert.ok(Math.abs(header.navX - 71.328125) < 1);
+    pass(
+      "Loaded Montserrat header matches original type, link padding, centering and proportions",
+    );
+    for (const width of [1440, 1366, 1280, 1024, 768, 390]) {
       await page.setViewportSize({ width, height: 1000 });
       for (const name of [
         "index",

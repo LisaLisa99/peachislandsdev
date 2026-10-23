@@ -41,6 +41,11 @@ engine.registerFilter("t", (key, ...params) => {
   return v;
 });
 engine.registerFilter("asset_url", (s) => "/assets/" + s);
+engine.registerFilter(
+  "preload_tag",
+  (s) =>
+    `<link rel="preload" href="${s}" as="font" type="font/woff2" crossorigin>`,
+);
 engine.registerFilter("image_url", (s) =>
   typeof s === "string" ? s : s?.src || s?.preview_image?.src || "",
 );
@@ -88,7 +93,7 @@ const menu = {
           "home-goods",
           "favorites",
         ][i]
-      : "/collections/all",
+      : "/Home.html",
     links: [],
   })),
 };
@@ -123,7 +128,7 @@ const ctx = {
   customer: { first_name: "Lisa" },
   routes: {
     root_url: "/",
-    all_products_collection_url: "/collections/all",
+    all_products_collection_url: "/Home.html",
     cart_url: "/cart",
     account_url: "/account",
     search_url: "/search",
@@ -185,13 +190,22 @@ async function group(filename) {
   return s;
 }
 async function page(name, body) {
+  const headerFonts = await engine.parseAndRender(
+    fs
+      .readFileSync(root + "/snippets/header-fonts.liquid", "utf8")
+      .replace(/{% style %}/g, "<style>")
+      .replace(/{% endstyle %}/g, "</style>"),
+    ctx,
+  );
   const css =
     ':root{--heading-font:"Cormorant Garamond","Times New Roman",serif;--body-font:Montserrat,sans-serif;--secondary-font:"Open Sans",sans-serif;--nav-font:Montserrat,sans-serif;--page-width:1400px;--ink:#111;--green:#317657;--rose:#a95459}';
   fs.writeFileSync(
     out + "/" + name + ".html",
     '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>' +
       css +
-      '</style><link rel="stylesheet" href="/assets/theme.css"><script defer src="/assets/theme.js"></script></head><body>' +
+      "</style>" +
+      headerFonts +
+      '<link rel="stylesheet" href="/assets/theme.css"><script defer src="/assets/theme.js"></script></head><body>' +
       (await group("header-group")) +
       '<main id="MainContent">' +
       body +
@@ -203,6 +217,35 @@ async function page(name, body) {
 (async () => {
   const home = await template("index");
   await page("index", home);
+  await page("404", await template("404"));
+  const routingCases = [];
+  for (const rootUrl of ["/", "/fr/"]) {
+    const before = ctx.routes.root_url;
+    ctx.routes.root_url = rootUrl;
+    for (const url of [
+      "/",
+      "/Home.html",
+      "Home.html",
+      "/index.html",
+      "index.html",
+      "/Home.html?preview_theme_id=123",
+      "/collections/cards",
+      "https://example.com/Home.html",
+    ]) {
+      routingCases.push({
+        root: rootUrl,
+        url,
+        actual: (
+          await engine.renderFile("navigation-url", { ...ctx, link: { url } })
+        ).trim(),
+      });
+    }
+    ctx.routes.root_url = before;
+  }
+  fs.writeFileSync(
+    out + "/routing.json",
+    JSON.stringify(routingCases, null, 2),
+  );
   await page("duplicates", home + (await template("index", {}, "second-")));
   const imgs = [
     "WildBloomStraightView.jpg",

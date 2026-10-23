@@ -13,6 +13,27 @@ def schema(path):
 
 
 class ThemeStructure(unittest.TestCase):
+    def test_required_shopify_entry_files_at_repository_root(self):
+        for relative in ['layout/theme.liquid', 'config/settings_schema.json', 'templates/index.json']:
+            self.assertTrue((ROOT / relative).is_file(), relative)
+        layout = (ROOT / 'layout/theme.liquid').read_text()
+        self.assertIn('{{ content_for_header }}', layout)
+        self.assertIn('{{ content_for_layout }}', layout)
+        settings = json.loads((ROOT / 'config/settings_schema.json').read_text())
+        self.assertIsInstance(settings, list)
+        self.assertEqual(settings[0]['name'], 'theme_info')
+        self.assertEqual(settings[0]['theme_version'], '1.0.1')
+
+    def test_homepage_template_resolves_to_real_sections(self):
+        homepage = json.loads((ROOT / 'templates/index.json').read_text())
+        self.assertEqual(homepage['layout'], 'theme')
+        self.assertTrue((ROOT / 'layout/theme.liquid').is_file())
+        self.assertFalse((ROOT / 'templates/index.liquid').exists())
+        self.assertEqual(homepage['sections']['hero']['type'], 'peach-split-hero')
+        self.assertNotIn('main-404', [s['type'] for s in homepage['sections'].values()])
+        not_found = json.loads((ROOT / 'templates/404.json').read_text())
+        self.assertEqual(not_found['sections']['main']['type'], 'main-404')
+
     def test_editor_ranges_and_defaults(self):
         schemas = [schema(p) for p in (ROOT / 'sections').glob('*.liquid')]
         schemas += json.loads((ROOT / 'config/settings_schema.json').read_text())
