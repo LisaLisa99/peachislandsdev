@@ -1,6 +1,207 @@
+{% doc %}
+  @prompt
+    1 image with text are on side
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-image-text-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    box-sizing: border-box;
+    color: {{ block.settings.text_color }};
+    background: {{ block.settings.background_color }};
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: {{ block.settings.column_gap }}px;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}--image-right .ai-image-text-{{ ai_gen_id }}__media {
+    order: 2;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}--image-right .ai-image-text-{{ ai_gen_id }}__content {
+    order: 1;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__media {
+    min-width: 0;
+    overflow: hidden;
+    border-radius: {{ block.settings.image_radius }}px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__media img,
+  .ai-image-text-{{ ai_gen_id }}__placeholder {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__placeholder {
+    position: relative;
+    background: #f1eee8;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__placeholder svg {
+    width: 100%;
+    height: 100%;
+    color: #777;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__empty-state {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    padding: 9px 12px;
+    border-radius: 4px;
+    background: #fff;
+    color: #333;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__content {
+    min-width: 0;
+    padding: {{ block.settings.content_padding }}px;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__eyebrow {
+    margin: 0 0 12px;
+    color: {{ block.settings.accent_color }};
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__heading {
+    margin: 0 0 16px;
+    color: {{ block.settings.text_color }};
+    font-size: clamp(26px, 3.2vw, {{ block.settings.heading_size }}px);
+    line-height: 1.15;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__body {
+    color: {{ block.settings.text_color }};
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__body p {
+    margin: 0 0 1em;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    margin-top: 22px;
+    padding: 11px 22px;
+    border: 1px solid {{ block.settings.button_color }};
+    border-radius: 3px;
+    background: {{ block.settings.button_color }};
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: filter 150ms ease;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__link:hover {
+    filter: brightness(0.88);
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__link:focus-visible {
+    outline: 3px solid {{ block.settings.accent_color }};
+    outline-offset: 3px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-image-text-{{ ai_gen_id }} {
+      width: 100%;
+    }
+
+    .ai-image-text-{{ ai_gen_id }}__layout {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .ai-image-text-{{ ai_gen_id }}--image-right .ai-image-text-{{ ai_gen_id }}__media,
+    .ai-image-text-{{ ai_gen_id }}--image-right .ai-image-text-{{ ai_gen_id }}__content {
+      order: initial;
+    }
+
+    .ai-image-text-{{ ai_gen_id }}__content {
+      padding: 0;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-image-text-{{ ai_gen_id }} {% if block.settings.image_position == 'right' %}ai-image-text-{{ ai_gen_id }}--image-right{% endif %}" {{ block.shopify_attributes }}>
+  <div class="ai-image-text-{{ ai_gen_id }}__layout">
+    <div class="ai-image-text-{{ ai_gen_id }}__media">
+      {% if block.settings.image != blank %}
+        <img src="{{ block.settings.image | image_url: width: 1400 }}" alt="{{ block.settings.image.alt | escape }}" loading="lazy" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}">
+      {% else %}
+        <div class="ai-image-text-{{ ai_gen_id }}__placeholder">
+          {{ 'image' | placeholder_svg_tag }}
+          <div class="ai-image-text-{{ ai_gen_id }}__empty-state">Add an image to complete this image-and-text block.</div>
+        </div>
+      {% endif %}
+    </div>
+    <div class="ai-image-text-{{ ai_gen_id }}__content">
+      {% if block.settings.eyebrow != blank %}
+        <p class="ai-image-text-{{ ai_gen_id }}__eyebrow">{{ block.settings.eyebrow | escape }}</p>
+      {% endif %}
+      {% if block.settings.heading != blank %}
+        <h2 class="ai-image-text-{{ ai_gen_id }}__heading">{{ block.settings.heading | escape }}</h2>
+      {% endif %}
+      {% if block.settings.body != blank %}
+        <div class="ai-image-text-{{ ai_gen_id }}__body">{{ block.settings.body }}</div>
+      {% endif %}
+      {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+        <a class="ai-image-text-{{ ai_gen_id }}__link" href="{{ block.settings.button_link }}">{{ block.settings.button_label | escape }}</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Image with side text",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "select", "id": "image_position", "label": "Image position", "options": [{ "value": "left", "label": "Left" }, { "value": "right", "label": "Right" }], "default": "left" },
+    { "type": "range", "id": "desktop_width_percent", "label": "Desktop width", "min": 50, "max": 100, "step": 5, "unit": "%", "default": 100 },
+    { "type": "text", "id": "eyebrow", "label": "Small heading", "default": "Our story" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "A little about us" },
+    { "type": "richtext", "id": "body", "label": "Text", "default": "<p>Share your story, introduce a collection, or tell customers what makes your products special.</p>" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Discover more" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "header", "content": "Style" },
+    { "type": "color", "id": "background_color", "label": "Background", "default": "#faf7f2" },
+    { "type": "color", "id": "text_color", "label": "Text", "default": "#111111" },
+    { "type": "color", "id": "accent_color", "label": "Accent", "default": "#7a3439" },
+    { "type": "color", "id": "button_color", "label": "Button", "default": "#317657" },
+    { "type": "range", "id": "heading_size", "label": "Heading size", "min": 28, "max": 64, "step": 2, "unit": "px", "default": 42 },
+    { "type": "range", "id": "column_gap", "label": "Column gap", "min": 10, "max": 80, "step": 5, "unit": "px", "default": 40 },
+    { "type": "range", "id": "content_padding", "label": "Text padding", "min": 0, "max": 50, "step": 5, "unit": "px", "default": 10 },
+    { "type": "range", "id": "image_radius", "label": "Image corner radius", "min": 0, "max": 30, "step": 2, "unit": "px", "default": 4 }
+  ],
+  "presets": [{ "name": "Image with side text" }],
+  "tag": null,
+  "class": "image-with-side-text"
+}
 {% endschema %}
