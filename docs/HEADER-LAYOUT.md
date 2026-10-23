@@ -21,3 +21,11 @@ CHROMIUM_PATH=/usr/bin/chromium node tests/header-layout.cjs
 ```
 
 These are local fixtures, not a real store transaction or hosted Shopify editor session. After GitHub sync, check View logs for acceptance, open the unpublished theme preview, add a test product and change/remove quantities to confirm real cart behavior, and inspect desktop/tablet/mobile layouts. Do not publish or modify Horizon.
+
+## Native account icon
+
+When Shopify customer accounts are enabled, a thin person-in-circle outline icon appears immediately before the cart in the main right-hand tool group. It uses `routes.account_url`, so Shopify handles login versus an authenticated profile; there is no custom account page or placeholder. Both icons are 24 px visually inside 44 × 44 px targets, with a 12 px desktop gap and 8 px mobile gap. Existing top-bar controls and settings are retained.
+
+Equal side reservations include the full account/cart group to keep the logo centered. On narrow phones, the logo's rendered width is capped to fit between the controls without cropping, distortion, overlap, or page overflow; its existing width settings and original image are unchanged. When customer accounts are disabled, the account icon is omitted rather than linking to an unavailable account page.
+
+The header fixture checks additionally verify the account target size, account/cart alignment and gap, logo/account non-overlap, native and locale-aware account URLs, and the disabled-account case across the existing nine viewport widths. Actual Shopify login redirects require the unpublished store preview and were not exercised locally.

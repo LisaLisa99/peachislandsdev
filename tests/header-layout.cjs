@@ -60,6 +60,7 @@ async function fixture(name, changes = {}) {
     long = false,
     count = 12,
     rootUrl = "/",
+    accountsEnabled = true,
     ...overrides
   } = changes;
   const labels = short
@@ -75,7 +76,7 @@ async function fixture(name, changes = {}) {
       account_url: rootUrl + "account",
     },
     cart: { item_count: count },
-    shop: { name: "Peach Islands", customer_accounts_enabled: true },
+    shop: { name: "Peach Islands", customer_accounts_enabled: accountsEnabled },
     customer: { first_name: "Lisa" },
     localization: {
       country: { name: "United States", currency: { iso_code: "USD" } },
@@ -103,6 +104,7 @@ async function fixture(name, changes = {}) {
 let server, browser;
 (async () => {
   await fixture("normal");
+  await fixture("accounts-off", { accountsEnabled: false });
   await fixture("short", { short: true });
   await fixture("long", { long: true });
   await fixture("zero", { count: 0 });
@@ -162,10 +164,21 @@ let server, browser;
         const h = document.querySelector("[data-peach-header]"),
           logo = h.querySelector(".brand").getBoundingClientRect(),
           cart = h.querySelector(".cart-icon").getBoundingClientRect(),
+          account = h
+            .querySelector(".header-account-icon")
+            .getBoundingClientRect(),
           nav = h.querySelector("[data-header-desktop-nav]"),
           list = nav.querySelector("ul");
         return {
           center: logo.x + logo.width / 2 - innerWidth / 2,
+          accountWidth: account.width,
+          accountHeight: account.height,
+          iconGap: cart.left - account.right,
+          iconAligned: Math.abs(cart.y - account.y) < 0.5,
+          accountOverlap: logo.right > account.left,
+          accountHref: h
+            .querySelector(".header-account-icon")
+            .getAttribute("href"),
           cartWidth: cart.width,
           cartHeight: cart.height,
           overflow: document.documentElement.scrollWidth > innerWidth,
@@ -184,6 +197,11 @@ let server, browser;
         `${name} centered at ${width}: ${JSON.stringify(state)}`,
       );
       assert.ok(state.cartWidth >= 44 && state.cartHeight >= 44);
+      assert.ok(state.accountWidth >= 44 && state.accountHeight >= 44);
+      assert.ok(state.iconGap >= 8);
+      assert.equal(state.iconAligned, true);
+      assert.equal(state.accountOverlap, false);
+      assert.equal(state.accountHref, "/account");
       assert.equal(state.overflow, false, `${name} at ${width}`);
       assert.equal(state.cartCount, 1);
       assert.equal(state.overlap, false);
@@ -205,7 +223,14 @@ let server, browser;
     await page.goto(base + "/" + name + ".html");
     assert.equal(await page.locator(".cart-count").textContent(), count);
     assert.equal(await page.locator(".cart-icon").getAttribute("href"), url);
+    assert.equal(
+      await page.locator(".header-account-icon").getAttribute("href"),
+      name === "locale" ? "/fr/account" : "/account",
+    );
   }
+  await page.goto(base + "/accounts-off.html");
+  assert.equal(await page.locator(".header-account-icon").count(), 0);
+  assert.equal(await page.locator(".cart-icon").count(), 1);
   await page.setViewportSize({ width: 1024, height: 900 });
   await page.goto(base + "/short.html");
   await page.waitForTimeout(50);

@@ -23,6 +23,7 @@
   align-items: center;
   gap: 12px;
 }
+.site-header[data-peach-header] .header-account-icon,
 .site-header[data-peach-header] .cart-icon,
 .site-header[data-peach-header] .header-menu-toggle {
   display: inline-flex;
@@ -39,6 +40,7 @@
   background: transparent;
   color: var(--ink, #111);
 }
+.site-header[data-peach-header] .header-account-icon svg,
 .site-header[data-peach-header] .cart-icon svg,
 .site-header[data-peach-header] .header-menu-toggle svg {
   width: 24px;
@@ -111,5 +113,25 @@
   }
   .site-header[data-peach-header] .main-header-row {
     padding-top: 20px;
+  }
+}
+
+/* Equal side reservations include both native account/cart targets. */
+.site-header[data-peach-header].has-main-account .main-header-row {
+  grid-template-columns: minmax(100px, 1fr) auto minmax(100px, 1fr);
+}
+.site-header[data-peach-header].has-main-account .brand {
+  width: min(var(--logo-width, 460px), calc(100vw - 272px));
+}
+@media (max-width: 767px) {
+  .site-header[data-peach-header].has-main-account .main-header-row {
+    grid-template-columns: minmax(96px, 1fr) auto minmax(96px, 1fr);
+    column-gap: 8px;
+  }
+  .site-header[data-peach-header].has-main-account .header-main-actions {
+    gap: 8px;
+  }
+  .site-header[data-peach-header].has-main-account .brand {
+    width: min(var(--mobile-logo-width, 260px), calc(100vw - 240px));
   }
 }
