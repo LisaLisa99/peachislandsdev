@@ -137,7 +137,17 @@
         "heading_size": 29,
         "text_size": 16,
         "text_font": "body",
-        "show_prices": false
+        "show_prices": false,
+        "show_heading": false,
+        "heading": "SIGNATURE PATTERNS",
+        "section_heading_size": 36,
+        "section_heading_alignment": "left",
+        "show_shop_all": false,
+        "shop_all_label": "SHOP ALL",
+        "shop_all_link": "",
+        "shop_all_font_size": 21,
+        "heading_link_gap": 12,
+        "header_images_gap": 32
       }
     },
     "story": {
@@ -244,7 +254,17 @@
         "heading_size": 29,
         "text_size": 16,
         "text_font": "secondary",
-        "show_prices": false
+        "show_prices": false,
+        "show_heading": false,
+        "heading": "SIGNATURE PATTERNS",
+        "section_heading_size": 36,
+        "section_heading_alignment": "left",
+        "show_shop_all": false,
+        "shop_all_label": "SHOP ALL",
+        "shop_all_link": "",
+        "shop_all_font_size": 21,
+        "heading_link_gap": 12,
+        "header_images_gap": 32
       }
     },
     "newsletter": {
@@ -324,7 +344,17 @@
         "heading_size": 29,
         "text_size": 16,
         "text_font": "secondary",
-        "show_prices": false
+        "show_prices": false,
+        "show_heading": false,
+        "heading": "SIGNATURE PATTERNS",
+        "section_heading_size": 36,
+        "section_heading_alignment": "left",
+        "show_shop_all": false,
+        "shop_all_label": "SHOP ALL",
+        "shop_all_link": "",
+        "shop_all_font_size": 21,
+        "heading_link_gap": 12,
+        "header_images_gap": 32
       }
     },
     "spacing": {
@@ -412,7 +442,17 @@
         "heading_size": 29,
         "text_size": 16,
         "text_font": "body",
-        "show_prices": false
+        "show_prices": false,
+        "show_heading": false,
+        "heading": "SIGNATURE PATTERNS",
+        "section_heading_size": 36,
+        "section_heading_alignment": "left",
+        "show_shop_all": false,
+        "shop_all_label": "SHOP ALL",
+        "shop_all_link": "",
+        "shop_all_font_size": 21,
+        "heading_link_gap": 12,
+        "header_images_gap": 32
       }
     },
     "1792777068b5fd0815": {
@@ -558,7 +598,17 @@
         "mobile_image_height": 280,
         "row_gap": 32,
         "alignment": "center",
-        "show_prices": true
+        "show_prices": true,
+        "show_heading": true,
+        "heading": "SIGNATURE PATTERNS",
+        "section_heading_size": 36,
+        "section_heading_alignment": "left",
+        "show_shop_all": true,
+        "shop_all_label": "SHOP ALL",
+        "shop_all_link": "",
+        "shop_all_font_size": 21,
+        "heading_link_gap": 12,
+        "header_images_gap": 32
       }
     }
   },
