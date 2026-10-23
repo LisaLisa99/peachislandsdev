@@ -1,30 +1,45 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "layout": "theme",
   "sections": {
     "hero": {
       "type": "peach-split-hero",
-      "settings": {
-        "padding_top": 0,
-        "padding_bottom": 0
-      },
       "blocks": {
         "desk": {
           "type": "panel",
           "settings": {
+            "image": "shopify://shop_images/Placeholderright.webp",
             "original_image": "image_25",
             "alt": "Floral letter writing stationery",
             "heading": "Desk & Stationary",
+            "heading_size": 61,
+            "button_label": "Explore",
             "link": "/collections/desk-stationary",
+            "button_color": "#dea08d",
+            "overlay": 0,
             "position": "left"
           }
         },
         "wrap": {
           "type": "panel",
           "settings": {
+            "image": "shopify://shop_images/placeholderleft.webp",
             "original_image": "image_26",
             "alt": "Botanical wrapping paper",
             "heading": "Wrapping Paper",
+            "heading_size": 61,
+            "button_label": "Explore",
             "link": "/collections/wrapping-paper",
+            "button_color": "#dea08d",
+            "overlay": 0,
             "position": "center"
           }
         }
@@ -32,37 +47,43 @@
       "block_order": [
         "desk",
         "wrap"
-      ]
+      ],
+      "settings": {
+        "background": "#ffffff",
+        "text_color": "#111111",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "height": 597,
+        "mobile_height": 352,
+        "columns": "2",
+        "gap": 0
+      }
     },
     "categories": {
       "type": "peach-image-cards",
-      "settings": {
-        "columns": "4",
-        "image_height": 213,
-        "padding_top": 54,
-        "padding_bottom": 68,
-        "background": "#ffffff",
-        "gap": 32
-      },
       "blocks": {
         "card1": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/WrappingPapercopy.jpg",
             "original_image": "image_45",
             "alt": "Wrapping Paper",
             "heading": "Wrapping Paper",
             "text": "<p>Beautiful papers designed to turn even the simplest gift into something unforgettable.</p>",
-            "link": "/collections/wrapping-paper"
+            "link": "/collections/wrapping-paper",
+            "button_label": ""
           }
         },
         "card2": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/JournalsNotebooks.png",
             "original_image": "image_33",
             "alt": "Journals & Notebooks",
             "heading": "Journals & Notebooks",
             "text": "<p>Thoughtfully designed pages for notes, ideas, dreams, lists, and everyday inspiration.</p>",
-            "link": "/collections/journals-notebooks"
+            "link": "/collections/journals-notebooks",
+            "button_label": ""
           }
         },
         "card3": {
@@ -72,17 +93,20 @@
             "alt": "Cards & Notes",
             "heading": "Cards & Notes",
             "text": "<p>Small cards made for meaningful messages, thoughtful moments, and handwritten connection.</p>",
-            "link": "/collections/cards"
+            "link": "/collections/cards",
+            "button_label": ""
           }
         },
         "card4": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/Cardsandnotes.png",
             "original_image": "image_25",
             "alt": "Desk & Stationary",
             "heading": "Desk & Stationary",
             "text": "<p>Elegant paper goods and desk essentials created to bring beauty to everyday writing.</p>",
-            "link": "/collections/desk-stationary"
+            "link": "/collections/desk-stationary",
+            "button_label": ""
           }
         }
       },
@@ -91,17 +115,24 @@
         "card2",
         "card3",
         "card4"
-      ]
+      ],
+      "settings": {
+        "background": "#ffffff",
+        "text_color": "#111111",
+        "padding_top": 54,
+        "padding_bottom": 68,
+        "columns": "4",
+        "mobile_columns": "1",
+        "gap": 32,
+        "image_height": 213,
+        "image_fit": "cover",
+        "heading_size": 29,
+        "text_size": 16,
+        "text_font": "body"
+      }
     },
     "story": {
       "type": "peach-editorial",
-      "settings": {
-        "background": "#fff7f7",
-        "padding_top": 58,
-        "padding_bottom": 66,
-        "text": "<p>Discover a world of beautifully illustrated journals, stationery, and home accessories. Every design in the <a href=\"/collections/lisa-monias\">Lisa Monias Collection</a> begins with original artwork, lovingly illustrated by hand and inspired by nature, creativity, and the beauty of everyday life. From paper goods to artful gifts, each piece is thoughtfully created to bring a little color, charm, and inspiration to your day.</p>",
-        "link": "/collections/lisa-monias"
-      },
       "blocks": {
         "calendar": {
           "type": "image",
@@ -123,19 +154,26 @@
       "block_order": [
         "calendar",
         "towel"
-      ]
+      ],
+      "settings": {
+        "background": "#fff7f7",
+        "text_color": "#111111",
+        "padding_top": 58,
+        "padding_bottom": 66,
+        "heading": "Bringing Beauty to Everyday Moments",
+        "text": "<p>Discover a world of beautifully illustrated journals, stationery, and home accessories. Every design in the <a href=\"/collections/lisa-monias\">Lisa Monias Collection</a> begins with original artwork, lovingly illustrated by hand and inspired by nature, creativity, and the beauty of everyday life. From paper goods to artful gifts, each piece is thoughtfully created to bring a little color, charm, and inspiration to your day.</p>",
+        "button_label": "Explore",
+        "link": "/collections/lisa-monias",
+        "button_color": "#238c5a",
+        "heading_size": 48,
+        "image_height": 417,
+        "gap": 28,
+        "image_columns": "2",
+        "reverse": false
+      }
     },
     "discover": {
       "type": "peach-image-cards",
-      "settings": {
-        "columns": "3",
-        "image_height": 294,
-        "padding_top": 40,
-        "padding_bottom": 68,
-        "background": "#ffffff",
-        "gap": 32,
-        "text_font": "secondary"
-      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -144,7 +182,8 @@
             "alt": "Tissue & Gift Wraping",
             "heading": "Tissue & Gift Wraping",
             "text": "<p>Elegant wrapping papers and tissue designed to make every gift feel thoughtful and beautifully presented.</p>",
-            "link": "/collections/gift-wrap"
+            "link": "/collections/gift-wrap",
+            "button_label": ""
           }
         },
         "card2": {
@@ -154,7 +193,8 @@
             "alt": "Beautiful Walls",
             "heading": "Beautiful Walls",
             "text": "<p>Artful prints inspired by nature, color, and quiet moments to bring warmth and beauty into your space.</p>",
-            "link": "/collections/wall-art"
+            "link": "/collections/wall-art",
+            "button_label": ""
           }
         },
         "card3": {
@@ -164,7 +204,8 @@
             "alt": "Planners",
             "heading": "Planners",
             "text": "<p>Beautifully designed planners created to help organize your days while inspiring creativity along the way.</p>",
-            "link": "/collections/planner-calendars"
+            "link": "/collections/planner-calendars",
+            "button_label": ""
           }
         }
       },
@@ -172,27 +213,38 @@
         "card1",
         "card2",
         "card3"
-      ]
+      ],
+      "settings": {
+        "background": "#ffffff",
+        "text_color": "#111111",
+        "padding_top": 40,
+        "padding_bottom": 68,
+        "columns": "3",
+        "mobile_columns": "1",
+        "gap": 32,
+        "image_height": 294,
+        "image_fit": "cover",
+        "heading_size": 29,
+        "text_size": 16,
+        "text_font": "secondary"
+      }
     },
     "newsletter": {
       "type": "peach-newsletter",
       "settings": {
         "background": "#fceae8",
+        "text_color": "#111111",
         "padding_top": 32,
-        "padding_bottom": 24
+        "padding_bottom": 24,
+        "heading": "Stay Inspired",
+        "heading_size": 36,
+        "text": "<p>Join our mailing list for beautiful freebies, early access to new collections, creative inspiration, and thoughtful little surprises delivered straight to your inbox. From stationery and journals to seasonal designs and exclusive releases, you’ll always be the first to know what’s blooming next.</p>",
+        "button_label": "Submit",
+        "note": "Only the lovely stuff. Never spam."
       }
     },
     "more": {
       "type": "peach-image-cards",
-      "settings": {
-        "columns": "3",
-        "image_height": 372,
-        "padding_top": 62,
-        "padding_bottom": 86,
-        "background": "#f6f3ee",
-        "gap": 32,
-        "text_font": "secondary"
-      },
       "blocks": {
         "card1": {
           "type": "card",
@@ -201,7 +253,8 @@
             "alt": "Gift Labels",
             "heading": "Gift Labels",
             "text": "<p>Charming labels and tags designed to add the perfect finishing touch to thoughtful gifts and beautiful packaging.</p>",
-            "link": "/collections/gift-labels"
+            "link": "/collections/gift-labels",
+            "button_label": ""
           }
         },
         "card2": {
@@ -211,7 +264,8 @@
             "alt": "Dream Journals & Diaries",
             "heading": "Dream Journals & Diaries",
             "text": "<p>Guided journals and creative spaces made for capturing dreams, reflections, ideas, and everyday inspiration.</p>",
-            "link": "/collections/journals-notebooks"
+            "link": "/collections/journals-notebooks",
+            "button_label": ""
           }
         },
         "card3": {
@@ -221,7 +275,8 @@
             "alt": "Recipe Books",
             "heading": "Recipe Books",
             "text": "<p>Beautiful keepsake recipe books created for treasured family favorites, memories, and meals worth sharing.</p>",
-            "link": "/collections/recipe-books"
+            "link": "/collections/recipe-books",
+            "button_label": ""
           }
         }
       },
@@ -229,12 +284,27 @@
         "card1",
         "card2",
         "card3"
-      ]
+      ],
+      "settings": {
+        "background": "#f6f3ee",
+        "text_color": "#111111",
+        "padding_top": 62,
+        "padding_bottom": 86,
+        "columns": "3",
+        "mobile_columns": "1",
+        "gap": 32,
+        "image_height": 372,
+        "image_fit": "cover",
+        "heading_size": 29,
+        "text_size": 16,
+        "text_font": "secondary"
+      }
     },
     "spacing": {
       "type": "peach-spacer",
       "settings": {
-        "height": 60
+        "height": 60,
+        "background": "#ffffff"
       }
     }
   },
