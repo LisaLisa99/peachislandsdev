@@ -71,7 +71,9 @@
             "heading": "Wrapping Paper",
             "text": "<p>Beautiful papers designed to turn even the simplest gift into something unforgettable.</p>",
             "link": "/collections/wrapping-paper",
-            "button_label": ""
+            "button_label": "",
+            "price": "",
+            "price_product": ""
           }
         },
         "card2": {
@@ -83,7 +85,9 @@
             "heading": "Journals & Notebooks",
             "text": "<p>Thoughtfully designed pages for notes, ideas, dreams, lists, and everyday inspiration.</p>",
             "link": "/collections/journals-notebooks",
-            "button_label": ""
+            "button_label": "",
+            "price": "",
+            "price_product": ""
           }
         },
         "card3": {
@@ -94,7 +98,9 @@
             "heading": "Cards & Notes",
             "text": "<p>Small cards made for meaningful messages, thoughtful moments, and handwritten connection.</p>",
             "link": "/collections/cards",
-            "button_label": ""
+            "button_label": "",
+            "price": "",
+            "price_product": ""
           }
         },
         "card4": {
@@ -106,7 +112,9 @@
             "heading": "Desk & Stationary",
             "text": "<p>Elegant paper goods and desk essentials created to bring beauty to everyday writing.</p>",
             "link": "/collections/desk-stationary",
-            "button_label": ""
+            "button_label": "",
+            "price": "",
+            "price_product": ""
           }
         }
       },
@@ -128,7 +136,8 @@
         "image_fit": "cover",
         "heading_size": 29,
         "text_size": 16,
-        "text_font": "body"
+        "text_font": "body",
+        "show_prices": false
       }
     },
     "story": {
@@ -183,7 +192,9 @@
             "heading": "Tissue & Gift Wraping",
             "text": "<p>Elegant wrapping papers and tissue designed to make every gift feel thoughtful and beautifully presented.</p>",
             "link": "/collections/gift-wrap",
-            "button_label": ""
+            "button_label": "",
+            "price": "",
+            "price_product": ""
           }
         },
         "card2": {
@@ -195,7 +206,9 @@
             "heading": "Beautiful Walls",
             "text": "<p>Artful prints inspired by nature, color, and quiet moments to bring warmth and beauty into your space.</p>",
             "link": "/collections/wall-art",
-            "button_label": ""
+            "button_label": "",
+            "price": "",
+            "price_product": ""
           }
         },
         "card3": {
@@ -207,7 +220,9 @@
             "heading": "Planners",
             "text": "<p>Beautifully designed planners created to help organize your days while inspiring creativity along the way.</p>",
             "link": "/collections/planner-calendars",
-            "button_label": ""
+            "button_label": "",
+            "price": "",
+            "price_product": ""
           }
         }
       },
@@ -228,7 +243,8 @@
         "image_fit": "cover",
         "heading_size": 29,
         "text_size": 16,
-        "text_font": "secondary"
+        "text_font": "secondary",
+        "show_prices": false
       }
     },
     "newsletter": {
@@ -256,7 +272,9 @@
             "heading": "Gift Labels",
             "text": "<p>Charming labels and tags designed to add the perfect finishing touch to thoughtful gifts and beautiful packaging.</p>",
             "link": "/collections/gift-labels",
-            "button_label": ""
+            "button_label": "",
+            "price": "",
+            "price_product": ""
           }
         },
         "card2": {
@@ -268,7 +286,9 @@
             "heading": "Dream Journals & Diaries",
             "text": "<p>Guided journals and creative spaces made for capturing dreams, reflections, ideas, and everyday inspiration.</p>",
             "link": "/collections/journals-notebooks",
-            "button_label": ""
+            "button_label": "",
+            "price": "",
+            "price_product": ""
           }
         },
         "card3": {
@@ -280,7 +300,9 @@
             "heading": "Recipe Books",
             "text": "<p>Beautiful keepsake recipe books created for treasured family favorites, memories, and meals worth sharing.</p>",
             "link": "/collections/recipe-books",
-            "button_label": ""
+            "button_label": "",
+            "price": "",
+            "price_product": ""
           }
         }
       },
@@ -301,7 +323,8 @@
         "image_fit": "cover",
         "heading_size": 29,
         "text_size": 16,
-        "text_font": "secondary"
+        "text_font": "secondary",
+        "show_prices": false
       }
     },
     "spacing": {
@@ -323,7 +346,9 @@
             "heading": "Wrapping Paper",
             "text": "<p>Beautiful papers designed to turn even the simplest gift into something unforgettable.</p>",
             "link": "/collections/wrapping-paper",
-            "button_label": ""
+            "button_label": "",
+            "price": "",
+            "price_product": ""
           }
         },
         "card_fJe6fb": {
@@ -335,7 +360,9 @@
             "heading": "Journals & Notebooks",
             "text": "<p>Thoughtfully designed pages for notes, ideas, dreams, lists, and everyday inspiration.</p>",
             "link": "/collections/journals-notebooks",
-            "button_label": ""
+            "button_label": "",
+            "price": "",
+            "price_product": ""
           }
         },
         "card_ThYRVN": {
@@ -346,7 +373,9 @@
             "heading": "Cards & Notes",
             "text": "<p>Small cards made for meaningful messages, thoughtful moments, and handwritten connection.</p>",
             "link": "/collections/cards",
-            "button_label": ""
+            "button_label": "",
+            "price": "",
+            "price_product": ""
           }
         },
         "card_CxwK3U": {
@@ -358,7 +387,9 @@
             "heading": "Desk & Stationary",
             "text": "<p>Elegant paper goods and desk essentials created to bring beauty to everyday writing.</p>",
             "link": "/collections/desk-stationary",
-            "button_label": ""
+            "button_label": "",
+            "price": "",
+            "price_product": ""
           }
         }
       },
@@ -380,7 +411,8 @@
         "image_fit": "cover",
         "heading_size": 29,
         "text_size": 16,
-        "text_font": "body"
+        "text_font": "body",
+        "show_prices": false
       }
     },
     "1792777068b5fd0815": {
@@ -420,6 +452,114 @@
         "height": 60,
         "background": "#ffffff"
       }
+    },
+    "peach_image_columns_5_T7xbKQ": {
+      "type": "peach-image-columns-5",
+      "blocks": {
+        "card_kPY8kM": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/mockupwildbloom_copy.jpg",
+            "original_image": "image_45",
+            "alt": "Peach Islands artwork",
+            "heading": "Wild Bloom",
+            "text": "<p>A Beautiful botanical bird letter writing set, inspired to make every handwritten note a treasured.</p>",
+            "link": "",
+            "button_label": "Test",
+            "image_width": 100,
+            "alignment": "center",
+            "price": "$14.99",
+            "price_product": ""
+          }
+        },
+        "card_PaaMze": {
+          "type": "card",
+          "settings": {
+            "original_image": "image_33",
+            "alt": "Peach Islands artwork",
+            "heading": "Column 2",
+            "text": "<p>Share a little inspiration from Peach Islands.</p>",
+            "link": "",
+            "button_label": "",
+            "image_width": 100,
+            "alignment": "inherit",
+            "price": "",
+            "price_product": ""
+          }
+        },
+        "card_Qe46rg": {
+          "type": "card",
+          "settings": {
+            "original_image": "image_02",
+            "alt": "Peach Islands artwork",
+            "heading": "Column 3",
+            "text": "<p>Share a little inspiration from Peach Islands.</p>",
+            "link": "",
+            "button_label": "",
+            "image_width": 100,
+            "alignment": "inherit",
+            "price": "",
+            "price_product": ""
+          }
+        },
+        "card_BaGfx9": {
+          "type": "card",
+          "settings": {
+            "original_image": "image_25",
+            "alt": "Peach Islands artwork",
+            "heading": "Column 4",
+            "text": "<p>Share a little inspiration from Peach Islands.</p>",
+            "link": "",
+            "button_label": "",
+            "image_width": 100,
+            "alignment": "inherit",
+            "price": "",
+            "price_product": ""
+          }
+        },
+        "card_Te8Kb7": {
+          "type": "card",
+          "settings": {
+            "original_image": "image_34",
+            "alt": "Peach Islands artwork",
+            "heading": "Column 5",
+            "text": "<p>Share a little inspiration from Peach Islands.</p>",
+            "link": "",
+            "button_label": "",
+            "image_width": 100,
+            "alignment": "inherit",
+            "price": "",
+            "price_product": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_kPY8kM",
+        "card_PaaMze",
+        "card_Qe46rg",
+        "card_BaGfx9",
+        "card_Te8Kb7"
+      ],
+      "name": "Image and text columns – 5",
+      "settings": {
+        "background": "#ffffff",
+        "text_color": "#111111",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "mobile_columns": "1",
+        "gap": 24,
+        "image_height": 240,
+        "image_fit": "cover",
+        "heading_size": 24,
+        "text_size": 14,
+        "text_font": "body",
+        "tablet_columns": "3",
+        "tablet_image_height": 240,
+        "mobile_image_height": 280,
+        "row_gap": 32,
+        "alignment": "center",
+        "show_prices": false
+      }
     }
   },
   "order": [
@@ -432,6 +572,7 @@
     "spacing",
     "peach_image_cards_zBmfXk",
     "1792777068b5fd0815",
-    "peach_spacer_MHtnWk"
+    "peach_spacer_MHtnWk",
+    "peach_image_columns_5_T7xbKQ"
   ]
 }
