@@ -189,6 +189,7 @@
         "card2": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/wallplaceholder.webp",
             "original_image": "image_01",
             "alt": "Beautiful Walls",
             "heading": "Beautiful Walls",
@@ -200,6 +201,7 @@
         "card3": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/plannerpalceholder.webp",
             "original_image": "image_34",
             "alt": "Planners",
             "heading": "Planners",
