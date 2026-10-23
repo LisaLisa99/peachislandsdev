@@ -1,0 +1,37 @@
+.peach-row-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--row-heading-link-gap, 12px);
+  text-align: var(--row-heading-align, left);
+  margin-bottom: var(--row-header-images-gap, 32px);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.peach-row-header-inset {
+  padding-inline: 16px;
+}
+.peach-row-header h2 {
+  margin: 0;
+  font-family: var(--heading-font, Georgia, serif);
+  font-size: var(--row-heading-size, 36px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+.peach-row-header .peach-row-link {
+  margin: 0;
+}
+.peach-row-header .peach-row-link a {
+  font-family: var(--body-font, sans-serif);
+  font-size: var(--row-link-size, 21px);
+  font-weight: 400;
+  line-height: 1.4;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  display: inline-block;
+  max-width: 100%;
+}
+@media (max-width: 575px) {
+  .peach-row-header-inset {
+    padding-inline: 0;
+  }
+}

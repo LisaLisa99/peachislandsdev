@@ -1,6 +1,7 @@
 {{ 'peach-wide-columns.css' | asset_url | stylesheet_tag }}
 <div class="section-surface image-cards peach-wide-columns" style="--section-bg: {{ section.settings.background }}; --section-ink: {{ section.settings.text_color }}; --pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px; --wide-columns: 6; --tablet-columns: {{ section.settings.tablet_columns }}; --mobile-columns: {{ section.settings.mobile_columns }}; --gap: {{ section.settings.gap }}px; --row-gap: {{ section.settings.row_gap }}px; --image-height: {{ section.settings.image_height }}px; --tablet-image-height: {{ section.settings.tablet_image_height }}px; --mobile-image-height: {{ section.settings.mobile_image_height }}px; --image-fit: {{ section.settings.image_fit }}; --card-title-size: {{ section.settings.heading_size }}px; --card-text-size: {{ section.settings.text_size }}px; --card-text-font: {% if section.settings.text_font == 'secondary' %}var(--secondary-font){% else %}var(--body-font){% endif %}; --card-alignment: {{ section.settings.alignment }}">
   <div class="container">
+    {% render 'peach-row-header', settings: section.settings, inset: true %}
     <div class="image-card-grid">
       {% for block in section.blocks %}
         <article class="image-card" {{ block.shopify_attributes }} style="--column-image-width: {{ block.settings.image_width }}%;{% unless block.settings.alignment == 'inherit' %} --card-alignment: {{ block.settings.alignment }};{% endunless %}">
@@ -213,6 +214,99 @@
       "id": "show_prices",
       "label": "Show prices",
       "default": false
+    },
+    {
+      "type": "header",
+      "content": "Section heading and link"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show section heading",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section heading",
+      "default": "SIGNATURE PATTERNS"
+    },
+    {
+      "type": "range",
+      "id": "section_heading_size",
+      "label": "Section heading size",
+      "min": 20,
+      "max": 64,
+      "step": 1,
+      "default": 36,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "section_heading_alignment",
+      "label": "Heading and link alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shop_all",
+      "label": "Show SHOP ALL link",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "shop_all_label",
+      "label": "SHOP ALL label",
+      "default": "SHOP ALL"
+    },
+    {
+      "type": "url",
+      "id": "shop_all_link",
+      "label": "SHOP ALL destination"
+    },
+    {
+      "type": "range",
+      "id": "shop_all_font_size",
+      "label": "SHOP ALL font size",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "default": 21,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_link_gap",
+      "label": "Heading to link spacing",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_images_gap",
+      "label": "Heading/link to images spacing",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 32,
+      "unit": "px"
     }
   ],
   "class": "pi-section",

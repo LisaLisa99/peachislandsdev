@@ -1,7 +1,8 @@
 {{ 'peach-showcase.css' | asset_url | stylesheet_tag }}
 <div class="section-surface peach-showcase" style="--section-bg: {{ section.settings.background }}; --section-ink: {{ section.settings.text_color }}; --pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px; --showcase-columns: {{ section.settings.columns }}; --showcase-tablet-columns: {{ section.settings.tablet_columns }}; --showcase-mobile-columns: {{ section.settings.mobile_columns }}; --showcase-gap: {{ section.settings.gap }}px; --showcase-row-gap: {{ section.settings.row_gap }}px; --showcase-ratio: {{ section.settings.image_ratio }}; --showcase-fit: {{ section.settings.image_fit }}; --showcase-align: {{ section.settings.alignment }}">
 <div class="container">
-  {% if section.settings.heading != blank or section.settings.show_shop_all %}<div class="showcase-heading">{% if section.settings.heading != blank %}<h2>{{ section.settings.heading | escape }}</h2>{% endif %}{% if section.settings.show_shop_all and section.settings.shop_all_label != blank %}{% assign shop_link = section.settings.shop_all_link | default: section.settings.collection.url | default: routes.all_products_collection_url %}<a class="text-link" href="{{ shop_link }}">{{ section.settings.shop_all_label | escape }}</a>{% endif %}</div>{% endif %}
+  {% assign row_default_link = section.settings.collection.url | default: routes.all_products_collection_url %}
+  {% render 'peach-row-header', settings: section.settings, default_link: row_default_link %}
   <div class="showcase-grid">
   {% if section.settings.source == 'collection' %}
     {% for product in section.settings.collection.products limit: section.settings.product_limit %}
@@ -36,7 +37,7 @@
       "type": "text",
       "id": "shop_all_label",
       "label": "Shop All label",
-      "default": "Shop all"
+      "default": "SHOP ALL"
     },
     {
       "type": "url",
@@ -262,6 +263,76 @@
       "id": "text_color",
       "label": "Text",
       "default": "#111111"
+    },
+    {
+      "type": "header",
+      "content": "Section heading and link"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show section heading",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_heading_size",
+      "label": "Section heading size",
+      "min": 20,
+      "max": 64,
+      "step": 1,
+      "default": 36,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "section_heading_alignment",
+      "label": "Heading and link alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "shop_all_font_size",
+      "label": "SHOP ALL font size",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "default": 21,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_link_gap",
+      "label": "Heading to link spacing",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_images_gap",
+      "label": "Heading/link to images spacing",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 32,
+      "unit": "px"
     }
   ],
   "blocks": [

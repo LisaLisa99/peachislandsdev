@@ -1,0 +1,12 @@
+{%- assign heading_visible = false -%}
+{%- assign link_visible = false -%}
+{%- assign row_link = settings.shop_all_link | default: default_link -%}
+{%- if settings.show_heading and settings.heading != blank -%}{%- assign heading_visible = true -%}{%- endif -%}
+{%- if settings.show_shop_all and settings.shop_all_label != blank and row_link != blank -%}{%- assign link_visible = true -%}{%- endif -%}
+{% if heading_visible or link_visible %}
+  {{ 'peach-row-header.css' | asset_url | stylesheet_tag }}
+  <div class="peach-row-header{% if inset %} peach-row-header-inset{% endif %}" style="--row-heading-size: {{ settings.section_heading_size }}px; --row-link-size: {{ settings.shop_all_font_size }}px; --row-heading-align: {{ settings.section_heading_alignment }}; --row-heading-link-gap: {{ settings.heading_link_gap }}px; --row-header-images-gap: {{ settings.header_images_gap }}px">
+    {% if heading_visible %}<h2>{{ settings.heading | escape }}</h2>{% endif %}
+    {% if link_visible %}<div class="peach-row-link"><a href="{{ row_link }}">{{ settings.shop_all_label | escape }}</a></div>{% endif %}
+  </div>
+{% endif %}

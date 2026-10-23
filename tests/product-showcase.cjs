@@ -11,7 +11,11 @@ const { chromium } = require(
 const root = path.resolve(__dirname, ".."),
   tmp = fs.mkdtempSync(path.join(os.tmpdir(), "peach-showcase-"));
 const engine = new Liquid({ root: root + "/snippets", extname: ".liquid" });
-const locale = JSON.parse(fs.readFileSync(root + "/locales/en.default.json"));
+const locale = JSON.parse(
+  fs
+    .readFileSync(root + "/locales/en.default.json", "utf8")
+    .replace(/^\s*\/\*[\s\S]*?\*\//, ""),
+);
 engine.registerFilter("t", (key, ...args) => {
   let text = key.split(".").reduce((v, k) => v[k], locale);
   for (const [name, value] of args)
@@ -309,7 +313,7 @@ let server, browser;
     products[2].featured_image.src,
   );
   assert.equal(
-    await page.locator("#collection .showcase-heading a").getAttribute("href"),
+    await page.locator("#collection .peach-row-header a").getAttribute("href"),
     "/collections/test",
   );
   for (const cls of [
