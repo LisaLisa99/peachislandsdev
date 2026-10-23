@@ -532,15 +532,16 @@
         "card_Qe46rg": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/letterhead1Place4.webp",
             "original_image": "image_02",
-            "alt": "Peach Islands artwork",
-            "heading": "Column 3",
-            "text": "<p>Share a little inspiration from Peach Islands.</p>",
+            "alt": "Strawberry Fileds",
+            "heading": "Strawberry Fileds",
+            "text": "<p>Strawberry Fileds letter writing set, inspired to make treasured notes.</p>",
             "link": "",
             "button_label": "",
             "image_width": 100,
             "alignment": "inherit",
-            "price": "",
+            "price": "14.99",
             "price_product": ""
           }
         },
