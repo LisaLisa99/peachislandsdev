@@ -198,7 +198,7 @@ async function page(name, body) {
     ctx,
   );
   const css =
-    ':root{--heading-font:"Cormorant Garamond","Times New Roman",serif;--body-font:Montserrat,sans-serif;--secondary-font:"Open Sans",sans-serif;--nav-font:Montserrat,sans-serif;--page-width:1400px;--ink:#111;--green:#317657;--rose:#a95459}';
+    ':root{--heading-font:"Peach Islands Cormorant Garamond",serif;--body-font:Montserrat,sans-serif;--secondary-font:"Open Sans",sans-serif;--nav-font:Montserrat,sans-serif;--page-width:1400px;--ink:#111;--green:#317657;--rose:#a95459}';
   fs.writeFileSync(
     out + "/" + name + ".html",
     '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>' +

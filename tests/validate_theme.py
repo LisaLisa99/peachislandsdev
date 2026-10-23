@@ -22,7 +22,7 @@ class ThemeStructure(unittest.TestCase):
         settings = json.loads((ROOT / 'config/settings_schema.json').read_text())
         self.assertIsInstance(settings, list)
         self.assertEqual(settings[0]['name'], 'theme_info')
-        self.assertEqual(settings[0]['theme_version'], '1.0.1')
+        self.assertEqual(settings[0]['theme_version'], '1.0.2')
 
     def test_homepage_template_resolves_to_real_sections(self):
         homepage = json.loads((ROOT / 'templates/index.json').read_text())
@@ -33,6 +33,25 @@ class ThemeStructure(unittest.TestCase):
         self.assertNotIn('main-404', [s['type'] for s in homepage['sections'].values()])
         not_found = json.loads((ROOT / 'templates/404.json').read_text())
         self.assertEqual(not_found['sections']['main']['type'], 'main-404')
+
+    def test_font_defaults_and_image_selector_import_contract(self):
+        settings = json.loads((ROOT / 'config/settings_schema.json').read_text())
+        fields = {s['id']: s for g in settings for s in g.get('settings', []) if 'id' in s}
+        self.assertEqual(fields['heading_font']['default'], 'assistant_n4')
+        self.assertTrue(fields['use_original_heading_font']['default'])
+        for name in ['peach-split-hero', 'peach-image-cards', 'peach-editorial']:
+            spec = schema(ROOT / 'sections' / (name + '.liquid'))
+            for block in spec['blocks']:
+                for field in block['settings']:
+                    if field['id'] == 'original_image':
+                        self.assertLessEqual(len(field['options']), 25)
+                        for option in field['options']:
+                            self.assertLessEqual(len(option['value']), 20)
+                            self.assertTrue(option['value'] == 'none' or option['value'].startswith('image_'))
+        fonts = (ROOT / 'snippets/header-fonts.liquid').read_text()
+        self.assertIn('Peach Islands Cormorant Garamond', fonts)
+        for weight in [400, 600, 700]:
+            self.assertTrue((ROOT / 'assets' / f'cormorant-garamond-latin-{weight}-normal.woff2').is_file())
 
     def test_editor_ranges_and_defaults(self):
         schemas = [schema(p) for p in (ROOT / 'sections').glob('*.liquid')]

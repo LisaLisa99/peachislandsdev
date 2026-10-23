@@ -13,7 +13,7 @@
         "calendar": {
           "type": "image",
           "settings": {
-            "original_image": "calendarsNaples.jpg",
+            "original_image": "image_52",
             "alt": "Naples illustrated calendar",
             "link": "/collections/lisa-monias"
           }
@@ -21,7 +21,7 @@
         "towel": {
           "type": "image",
           "settings": {
-            "original_image": "NaplesTeaTowelPreview.jpg",
+            "original_image": "image_32",
             "alt": "Naples illustrated tea towel",
             "link": "/collections/lisa-monias"
           }

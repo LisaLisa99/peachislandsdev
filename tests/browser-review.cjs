@@ -119,6 +119,12 @@ const server = http.createServer((req, res) => {
       ["15px", "500", "2px", "15px", "10px 12px"],
     );
     assert.equal(header.fontLoaded, true);
+    assert.equal(
+      await page.evaluate(() =>
+        document.fonts.check('400 36px "Peach Islands Cormorant Garamond"'),
+      ),
+      true,
+    );
     assert.ok(Math.abs(header.headerHeight - 168) < 1);
     assert.ok(Math.abs(header.logoWidth - 459) <= 1);
     assert.equal(header.logoCenter, 720);

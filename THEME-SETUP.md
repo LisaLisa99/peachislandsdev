@@ -71,3 +71,11 @@ Once sync succeeds, reopen this unpublished theme's editor from its theme-librar
 If the current connection remains incomplete, use **Add theme → Connect from GitHub** to add this exact branch as another separate unpublished theme. Alternatively use **Add theme → Upload ZIP file** with the CLI-packaged 1.0.1 ZIP. Neither action requires publishing or replacing Horizon; a newly added theme will have a different preview theme ID. Do not upload a GitHub “Download ZIP” archive, which includes an enclosing repository directory.
 
 The cloud environment can verify remote Git files and package contents but cannot inspect your Shopify admin integration or confirm hosted preview behavior. If sync still fails, provide its exact error text.
+
+## Synchronization fix 1.0.2
+
+The invalid `cormorant_garamond_n4` font-picker default was replaced with Shopify's valid `assistant_n4` handle. Original heading typography remains the default via the included Cormorant Garamond font files; use **Theme settings → Typography → Use original heading typography** to keep it enabled. This preserves the HTML design rather than switching headings to Assistant.
+
+The three image sections and all their template references were updated together with compact original-image selectors. After GitHub finishes syncing this correction, inspect **View logs** again. Confirm that `config/settings_schema.json`, `sections/peach-split-hero.liquid`, `sections/peach-image-cards.liquid`, `sections/peach-editorial.liquid`, and `templates/index.json` are accepted, with **zero failed files**. Then reopen Home page in the unpublished theme editor. A local passing Theme Check does not replace that sync confirmation. If any warning identifies a rejected section schema, share the full line.
+
+The latest 1.0.2 CLI-packaged ZIP is also suitable for adding another separate unpublished theme if the existing integration is stuck. Do not publish either preview theme or replace Horizon.

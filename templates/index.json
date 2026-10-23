@@ -11,7 +11,7 @@
         "desk": {
           "type": "panel",
           "settings": {
-            "original_image": "EN022-2_fbcb0ac0-a93e-47dd-b111-89b73e79a0b7_540x-1.jpg.webp",
+            "original_image": "image_25",
             "alt": "Floral letter writing stationery",
             "heading": "Desk & Stationary",
             "link": "/collections/desk-stationary",
@@ -21,7 +21,7 @@
         "wrap": {
           "type": "panel",
           "settings": {
-            "original_image": "IMG_9979-2_540x.jpg.webp",
+            "original_image": "image_26",
             "alt": "Botanical wrapping paper",
             "heading": "Wrapping Paper",
             "link": "/collections/wrapping-paper",
@@ -48,7 +48,7 @@
         "card1": {
           "type": "card",
           "settings": {
-            "original_image": "WP027-S-b_540x.jpg.webp",
+            "original_image": "image_45",
             "alt": "Wrapping Paper",
             "heading": "Wrapping Paper",
             "text": "<p>Beautiful papers designed to turn even the simplest gift into something unforgettable.</p>",
@@ -58,7 +58,7 @@
         "card2": {
           "type": "card",
           "settings": {
-            "original_image": "PEN01-2_300x.jpg.webp",
+            "original_image": "image_33",
             "alt": "Journals & Notebooks",
             "heading": "Journals & Notebooks",
             "text": "<p>Thoughtfully designed pages for notes, ideas, dreams, lists, and everyday inspiration.</p>",
@@ -68,7 +68,7 @@
         "card3": {
           "type": "card",
           "settings": {
-            "original_image": "BirthMonthFlowers.jpg",
+            "original_image": "image_02",
             "alt": "Cards & Notes",
             "heading": "Cards & Notes",
             "text": "<p>Small cards made for meaningful messages, thoughtful moments, and handwritten connection.</p>",
@@ -78,7 +78,7 @@
         "card4": {
           "type": "card",
           "settings": {
-            "original_image": "EN022-2_fbcb0ac0-a93e-47dd-b111-89b73e79a0b7_540x-1.jpg.webp",
+            "original_image": "image_25",
             "alt": "Desk & Stationary",
             "heading": "Desk & Stationary",
             "text": "<p>Elegant paper goods and desk essentials created to bring beauty to everyday writing.</p>",
@@ -106,7 +106,7 @@
         "calendar": {
           "type": "image",
           "settings": {
-            "original_image": "calendarsNaples.jpg",
+            "original_image": "image_52",
             "alt": "Naples illustrated calendar",
             "link": "/collections/lisa-monias"
           }
@@ -114,7 +114,7 @@
         "towel": {
           "type": "image",
           "settings": {
-            "original_image": "NaplesTeaTowelPreview.jpg",
+            "original_image": "image_32",
             "alt": "Naples illustrated tea towel",
             "link": "/collections/lisa-monias"
           }
@@ -140,7 +140,7 @@
         "card1": {
           "type": "card",
           "settings": {
-            "original_image": "TP04-2_1950x.jpg",
+            "original_image": "image_44",
             "alt": "Tissue & Gift Wraping",
             "heading": "Tissue & Gift Wraping",
             "text": "<p>Elegant wrapping papers and tissue designed to make every gift feel thoughtful and beautifully presented.</p>",
@@ -150,7 +150,7 @@
         "card2": {
           "type": "card",
           "settings": {
-            "original_image": "APG159b_360x.jpg.webp",
+            "original_image": "image_01",
             "alt": "Beautiful Walls",
             "heading": "Beautiful Walls",
             "text": "<p>Artful prints inspired by nature, color, and quiet moments to bring warmth and beauty into your space.</p>",
@@ -160,7 +160,7 @@
         "card3": {
           "type": "card",
           "settings": {
-            "original_image": "PLA06-4_540x.jpg.webp",
+            "original_image": "image_34",
             "alt": "Planners",
             "heading": "Planners",
             "text": "<p>Beautifully designed planners created to help organize your days while inspiring creativity along the way.</p>",
@@ -197,7 +197,7 @@
         "card1": {
           "type": "card",
           "settings": {
-            "original_image": "TP04-2_1950x.jpg",
+            "original_image": "image_44",
             "alt": "Gift Labels",
             "heading": "Gift Labels",
             "text": "<p>Charming labels and tags designed to add the perfect finishing touch to thoughtful gifts and beautiful packaging.</p>",
@@ -207,7 +207,7 @@
         "card2": {
           "type": "card",
           "settings": {
-            "original_image": "APG159b_360x.jpg.webp",
+            "original_image": "image_01",
             "alt": "Dream Journals & Diaries",
             "heading": "Dream Journals & Diaries",
             "text": "<p>Guided journals and creative spaces made for capturing dreams, reflections, ideas, and everyday inspiration.</p>",
@@ -217,7 +217,7 @@
         "card3": {
           "type": "card",
           "settings": {
-            "original_image": "PLA06-4_540x.jpg.webp",
+            "original_image": "image_34",
             "alt": "Recipe Books",
             "heading": "Recipe Books",
             "text": "<p>Beautiful keepsake recipe books created for treasured family favorites, memories, and meals worth sharing.</p>",

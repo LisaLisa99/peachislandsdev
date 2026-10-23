@@ -2,7 +2,7 @@
   {
     "name": "theme_info",
     "theme_name": "Peach Islands",
-    "theme_version": "1.0.1",
+    "theme_version": "1.0.2",
     "theme_author": "Peach Islands",
     "theme_documentation_url": "https://shopify.dev/docs/storefronts/themes",
     "theme_support_url": "https://help.shopify.com/"
@@ -11,10 +11,17 @@
     "name": "Typography",
     "settings": [
       {
+        "type": "checkbox",
+        "id": "use_original_heading_font",
+        "label": "Use original heading typography",
+        "default": true,
+        "info": "Display the included Cormorant Garamond font from the original website. Turn off to use the alternative heading font."
+      },
+      {
         "type": "font_picker",
         "id": "heading_font",
-        "label": "Headings",
-        "default": "cormorant_garamond_n4"
+        "label": "Alternative heading font",
+        "default": "assistant_n4"
       },
       {
         "type": "font_picker",

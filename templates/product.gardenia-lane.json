@@ -15,7 +15,7 @@
         "letter": {
           "type": "image",
           "settings": {
-            "original_image": "Sample2.jpg",
+            "original_image": "image_41",
             "alt": "Gardenia Lane writing set"
           }
         }
@@ -38,14 +38,14 @@
         "planner": {
           "type": "image",
           "settings": {
-            "original_image": "PLA06-4_540x.jpg.webp",
+            "original_image": "image_34",
             "alt": "Botanical weekly planner"
           }
         },
         "towel": {
           "type": "image",
           "settings": {
-            "original_image": "TEA13-4_300x.jpg.webp",
+            "original_image": "image_43",
             "alt": "Botanical tea towel"
           }
         }
