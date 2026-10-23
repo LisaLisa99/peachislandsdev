@@ -468,8 +468,8 @@
             "button_label": "Optional Link Label here",
             "image_width": 100,
             "alignment": "center",
-            "price": "$14.99",
-            "price_product": ""
+            "price": "14.99",
+            "price_product": "desk-stationary"
           }
         },
         "card_PaaMze": {
