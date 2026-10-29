@@ -1,3 +1,8 @@
+/*
+ * Peach Islands — Custom Shopify Theme
+ * Theme Design: South River Design Team
+ * All rights reserved.
+ */
 /* Scoped additions: existing image-and-text sections retain their original rules. */
 .peach-wide-columns .image-card-grid {
   grid-template-columns: repeat(var(--wide-columns), minmax(0, 1fr));
