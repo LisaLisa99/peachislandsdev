@@ -509,7 +509,7 @@
             "button_label": "",
             "image_width": 100,
             "alignment": "center",
-            "price": "14.99",
+            "price": "$14.99",
             "price_product": ""
           }
         },
@@ -541,7 +541,7 @@
             "button_label": "",
             "image_width": 100,
             "alignment": "inherit",
-            "price": "14.99",
+            "price": "$14.99",
             "price_product": ""
           }
         },
@@ -557,7 +557,7 @@
             "button_label": "",
             "image_width": 100,
             "alignment": "inherit",
-            "price": "14.99",
+            "price": "$14.99",
             "price_product": ""
           }
         }
